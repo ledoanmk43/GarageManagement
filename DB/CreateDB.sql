@@ -26,56 +26,95 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-create table danhsachxe(
-	stt		int,
-	bienso	nvarchar(20) primary key,
-	hieuxe	nvarchar(50) ,
-	chuxe	varchar(50),
-	tienno	money
-);
 
-create table tiepnhansuaxe(
-	tenchuxe	varchar(50),
-	bienso		nvarchar(20) foreign key references danhsachxe(bienso),
-	hieuxe		nvarchar(50) primary key,
-	diachi		nvarchar(50),
-	dienthoai	int,
-	ngaytiepnhan smalldatetime
-);
+create table chuxe(
+	
+	machuxe int identity primary key not null,
+	name nvarchar(1000) not null,
+	dienthoai int not null,
+	diachi nvarchar (1000),
+	email nvarchar (1000)
+)
+go
 
-create table phieusuachua(
-	biensoxe		nvarchar(20) foreign key references danhsachxe(bienso),
-	ngaysuachua		smalldatetime,
-	stt				int,
-	noidung			nvarchar(50),
-	vattuphutung	nvarchar(50) primary key,
-	soluong			int,
-	dongia			money,
-	tiencong		money,
-	thanhtien		money
-);
+create table hieuxe
+(
+	mahieuxe int identity primary key not null,
+	tenhieuxe nvarchar (1000) not null
+) 
+go
+
+create table xe
+(
+	maxe int identity primary key not null,
+	bienso int not null,
+	ngaytiepnhan Datetime not null,
+	mahieuxe int foreign key references hieuxe(mahieuxe),
+	machuxe int foreign key references chuxe(machuxe),
+)
+go
+
+
+create table phieutiepnhan(
+	maphieutiepnhan int identity primary key not null,
+	maxe int foreign key references xe(maxe),
+	ngaynhan Datetime not null 
+)
+go
+
+
+create table phutung(
+	maphutung int identity primary key not null,
+	tenphutung nvarchar(1000) not null,
+	soluong int not null,
+	dongia float not null,
+)
+go
+
+create table tiencong(
+	matiencong int identity primary key not null,
+	tentiencong nvarchar(1000) not null,
+	muctien int not null
+)
+go
 
 create table phieuthutien(
-	hotenchuxe		nvarchar(50),
-	bienso			nvarchar(20) foreign key references danhsachxe(bienso),
-	dienthoai		int,
-	email			nvarchar(50),
-	ngaythutien		smalldatetime,
-	sothutien		int
-);
+	maphieuthutien int identity primary key not null,
+	ngaythutien Datetime not null,
+	sotienthu int null,
+	maphieutiepnhan int foreign key references phieutiepnhan(maphieutiepnhan)
+)
+go
 
 create table doanhso(
-	stt			int,
-	hieuxe		nvarchar(50) foreign key references tiepnhansuaxe(hieuxe),
-	soluotsua	int,
-	thanhtien	money,
-	tile		nvarchar(10)
-);
+	thangdoanhso int identity primary key not null,
+	tongdoanhthu float not null,
+	soluotsua int  null ,
+	mahieuxe int foreign key references hieuxe(mahieuxe),
+)
+go
 
-create table baocaoton(
-	stt				int,
-	vattuphutung	nvarchar(50) foreign key references phieusuachua(vattuphutung),
-	tondau			nvarchar(50),
-	phatsinh		nvarchar(50),
-	toncuoi			nvarchar(50)
-);
+create table tonkho(
+	thangtonkho int identity primary key not null,
+	tondau Datetime not null,
+	phatsinh Datetime not null,
+	toncuoi Datetime not null,
+	maphutung int foreign key references phutung(maphutung),
+)
+go
+
+
+create table phieusuachua(
+	maphieusuachua int identity primary key not null,
+	ngaysuachua Datetime not null,
+	noidung nvarchar (1000) not null,
+	sothutu int not null,
+	tiencong int not null,
+	maphutung int foreign key references phutung(maphutung),
+	maphieutiepnhan int foreign key references phieutiepnhan(maphieutiepnhan),
+	matiencong int foreign key references tiencong(matiencong)
+)
+go
+
+
+
