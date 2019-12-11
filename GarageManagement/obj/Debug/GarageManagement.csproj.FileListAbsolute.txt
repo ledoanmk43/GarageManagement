@@ -1,0 +1,10 @@
+D:\Courses UIT\CNPM\Garage Management\GarageManagement\GarageManagement\bin\Debug\GarageManagement.exe.config
+D:\Courses UIT\CNPM\Garage Management\GarageManagement\GarageManagement\bin\Debug\GarageManagement.exe
+D:\Courses UIT\CNPM\Garage Management\GarageManagement\GarageManagement\bin\Debug\GarageManagement.pdb
+D:\Courses UIT\CNPM\Garage Management\GarageManagement\GarageManagement\obj\Debug\GarageManagement.csprojAssemblyReference.cache
+D:\Courses UIT\CNPM\Garage Management\GarageManagement\GarageManagement\obj\Debug\GarageManagement.LoginForm.resources
+D:\Courses UIT\CNPM\Garage Management\GarageManagement\GarageManagement\obj\Debug\GarageManagement.Properties.Resources.resources
+D:\Courses UIT\CNPM\Garage Management\GarageManagement\GarageManagement\obj\Debug\GarageManagement.csproj.GenerateResource.cache
+D:\Courses UIT\CNPM\Garage Management\GarageManagement\GarageManagement\obj\Debug\GarageManagement.csproj.CoreCompileInputs.cache
+D:\Courses UIT\CNPM\Garage Management\GarageManagement\GarageManagement\obj\Debug\GarageManagement.exe
+D:\Courses UIT\CNPM\Garage Management\GarageManagement\GarageManagement\obj\Debug\GarageManagement.pdb

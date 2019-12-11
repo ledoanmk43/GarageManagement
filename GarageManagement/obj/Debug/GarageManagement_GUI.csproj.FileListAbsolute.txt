@@ -1,0 +1,10 @@
+C:\Users\Admin\Documents\GitHub\GarageManagement\GarageManagement\bin\Debug\GarageManagement.exe.config
+C:\Users\Admin\Documents\GitHub\GarageManagement\GarageManagement\bin\Debug\GarageManagement.exe
+C:\Users\Admin\Documents\GitHub\GarageManagement\GarageManagement\bin\Debug\GarageManagement.pdb
+C:\Users\Admin\Documents\GitHub\GarageManagement\GarageManagement\obj\Debug\GarageManagement_GUI.csprojAssemblyReference.cache
+C:\Users\Admin\Documents\GitHub\GarageManagement\GarageManagement\obj\Debug\GarageManagement.LoginForm.resources
+C:\Users\Admin\Documents\GitHub\GarageManagement\GarageManagement\obj\Debug\GarageManagement.Properties.Resources.resources
+C:\Users\Admin\Documents\GitHub\GarageManagement\GarageManagement\obj\Debug\GarageManagement_GUI.csproj.GenerateResource.cache
+C:\Users\Admin\Documents\GitHub\GarageManagement\GarageManagement\obj\Debug\GarageManagement_GUI.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Documents\GitHub\GarageManagement\GarageManagement\obj\Debug\GarageManagement.exe
+C:\Users\Admin\Documents\GitHub\GarageManagement\GarageManagement\obj\Debug\GarageManagement.pdb
