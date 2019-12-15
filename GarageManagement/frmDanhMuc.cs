@@ -117,6 +117,9 @@ namespace GarageManagement
         {           
             khachhangList.DataSource = SearchKhachHang(txtTimKhachHang.Text);
         }
+
+
+
         #endregion
 
 

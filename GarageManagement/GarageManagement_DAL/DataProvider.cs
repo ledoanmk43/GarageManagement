@@ -26,24 +26,25 @@ namespace GarageManagement_DAL
             DataTable data = new DataTable();
             using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
-                connection.Open();
-                SqlCommand command = new SqlCommand(query, connection);
-                if (parameter != null)
-                {
-                    string[] listParameter = query.Split(' ');
-                    int i = 0;
-                    foreach(string item in listParameter)
+                    connection.Open();
+                    SqlCommand command = new SqlCommand(query, connection);
+                    if (parameter != null)
                     {
-                        if(item.Contains('@'))
+                        string[] listParameter = query.Split(' ');
+                        int i = 0;
+                        foreach (string item in listParameter)
                         {
-                            command.Parameters.AddWithValue(item, parameter[i]);
-                            i++;
+                            if (item.Contains('@'))
+                            {
+                                command.Parameters.AddWithValue(item, parameter[i]);
+                                i++;
+                            }
                         }
                     }
-                }
-                SqlDataAdapter adapter = new SqlDataAdapter(command);
-                adapter.Fill(data);
-                connection.Close();
+                    SqlDataAdapter adapter = new SqlDataAdapter(command);
+                    adapter.Fill(data);
+                    connection.Close();
+
             }
             return data;
         }

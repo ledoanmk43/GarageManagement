@@ -17,7 +17,7 @@ namespace GarageManagement_DAL
             get
             {
                 if (instance == null) instance = new KhachHangDAL();
-                return KhachHangDAL.instance;
+                return instance;
             }
             private set
             {
@@ -65,12 +65,14 @@ namespace GarageManagement_DAL
             List<KhachHangDTO> khachhangList = new List<KhachHangDTO>();
             string query = string.Format("select * from dbo.hosokhachhang where dbo.GetUnsignString(customername) like N'%' + dbo.GetUnsignString(N'{0}') + '%'", name);
             query += string.Format(" or id like N'%' + N'{0}' + '%'", name);
-            DataTable data = DataProvider.Instance.ExecuteQuery(query);
-            foreach (DataRow item in data.Rows)
-            {
-                KhachHangDTO khachhang = new KhachHangDTO(item);
-                khachhangList.Add(khachhang);
-            }
+                       
+                DataTable data = DataProvider.Instance.ExecuteQuery(query);
+                foreach (DataRow item in data.Rows)
+                {
+                    KhachHangDTO khachhang = new KhachHangDTO(item);
+                    khachhangList.Add(khachhang);
+                }           
+        
             return khachhangList;
         }
     }
