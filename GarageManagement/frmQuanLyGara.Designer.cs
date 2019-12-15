@@ -33,14 +33,14 @@
             this.tsHSKH = new System.Windows.Forms.ToolStripMenuItem();
             this.tsPhieusuachua = new System.Windows.Forms.ToolStripMenuItem();
             this.tsPhieuthutien = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsQuanlykho = new System.Windows.Forms.ToolStripMenuItem();
             this.mnsBaocao = new System.Windows.Forms.ToolStripMenuItem();
             this.tsDoanhSo = new System.Windows.Forms.ToolStripMenuItem();
             this.tsTonKho = new System.Windows.Forms.ToolStripMenuItem();
             this.mnsTaiKhoan = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsQuanlykho = new System.Windows.Forms.ToolStripMenuItem();
-            this.adminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsTTTK = new System.Windows.Forms.ToolStripMenuItem();
             this.tsDangXuat = new System.Windows.Forms.ToolStripMenuItem();
+            this.adminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -67,26 +67,33 @@
             this.tsPhieuthutien,
             this.tsQuanlykho});
             this.mnsDanhmuc.Name = "mnsDanhmuc";
-            this.mnsDanhmuc.Size = new System.Drawing.Size(88, 24);
+            this.mnsDanhmuc.Size = new System.Drawing.Size(90, 24);
             this.mnsDanhmuc.Text = "Danh mục";
+            this.mnsDanhmuc.Click += new System.EventHandler(this.mnsDanhmuc_Click);
             // 
             // tsHSKH
             // 
             this.tsHSKH.Name = "tsHSKH";
-            this.tsHSKH.Size = new System.Drawing.Size(216, 26);
+            this.tsHSKH.Size = new System.Drawing.Size(224, 26);
             this.tsHSKH.Text = "Hồ sơ khách hàng";
             // 
             // tsPhieusuachua
             // 
             this.tsPhieusuachua.Name = "tsPhieusuachua";
-            this.tsPhieusuachua.Size = new System.Drawing.Size(216, 26);
+            this.tsPhieusuachua.Size = new System.Drawing.Size(224, 26);
             this.tsPhieusuachua.Text = "Phiếu sửa chữa";
             // 
             // tsPhieuthutien
             // 
             this.tsPhieuthutien.Name = "tsPhieuthutien";
-            this.tsPhieuthutien.Size = new System.Drawing.Size(216, 26);
+            this.tsPhieuthutien.Size = new System.Drawing.Size(224, 26);
             this.tsPhieuthutien.Text = "Phiếu thu tiền";
+            // 
+            // tsQuanlykho
+            // 
+            this.tsQuanlykho.Name = "tsQuanlykho";
+            this.tsQuanlykho.Size = new System.Drawing.Size(224, 26);
+            this.tsQuanlykho.Text = "Quản lý kho";
             // 
             // mnsBaocao
             // 
@@ -94,19 +101,19 @@
             this.tsDoanhSo,
             this.tsTonKho});
             this.mnsBaocao.Name = "mnsBaocao";
-            this.mnsBaocao.Size = new System.Drawing.Size(152, 24);
+            this.mnsBaocao.Size = new System.Drawing.Size(154, 24);
             this.mnsBaocao.Text = "Báo cáo kinh doanh";
             // 
             // tsDoanhSo
             // 
             this.tsDoanhSo.Name = "tsDoanhSo";
-            this.tsDoanhSo.Size = new System.Drawing.Size(216, 26);
+            this.tsDoanhSo.Size = new System.Drawing.Size(211, 26);
             this.tsDoanhSo.Text = "Báo cáo doanh số";
             // 
             // tsTonKho
             // 
             this.tsTonKho.Name = "tsTonKho";
-            this.tsTonKho.Size = new System.Drawing.Size(216, 26);
+            this.tsTonKho.Size = new System.Drawing.Size(211, 26);
             this.tsTonKho.Text = "Báo cáo tồn kho";
             // 
             // mnsTaiKhoan
@@ -115,32 +122,26 @@
             this.tsTTTK,
             this.tsDangXuat});
             this.mnsTaiKhoan.Name = "mnsTaiKhoan";
-            this.mnsTaiKhoan.Size = new System.Drawing.Size(83, 24);
+            this.mnsTaiKhoan.Size = new System.Drawing.Size(85, 24);
             this.mnsTaiKhoan.Text = "Tài khoản";
-            // 
-            // tsQuanlykho
-            // 
-            this.tsQuanlykho.Name = "tsQuanlykho";
-            this.tsQuanlykho.Size = new System.Drawing.Size(216, 26);
-            this.tsQuanlykho.Text = "Quản lý kho";
-            // 
-            // adminToolStripMenuItem
-            // 
-            this.adminToolStripMenuItem.Name = "adminToolStripMenuItem";
-            this.adminToolStripMenuItem.Size = new System.Drawing.Size(65, 24);
-            this.adminToolStripMenuItem.Text = "Admin";
             // 
             // tsTTTK
             // 
             this.tsTTTK.Name = "tsTTTK";
-            this.tsTTTK.Size = new System.Drawing.Size(216, 26);
+            this.tsTTTK.Size = new System.Drawing.Size(220, 26);
             this.tsTTTK.Text = "Thông tin tài khoản";
             // 
             // tsDangXuat
             // 
             this.tsDangXuat.Name = "tsDangXuat";
-            this.tsDangXuat.Size = new System.Drawing.Size(216, 26);
+            this.tsDangXuat.Size = new System.Drawing.Size(220, 26);
             this.tsDangXuat.Text = "Đăng xuất";
+            // 
+            // adminToolStripMenuItem
+            // 
+            this.adminToolStripMenuItem.Name = "adminToolStripMenuItem";
+            this.adminToolStripMenuItem.Size = new System.Drawing.Size(67, 24);
+            this.adminToolStripMenuItem.Text = "Admin";
             // 
             // panel1
             // 

@@ -1,6 +1,6 @@
 ﻿namespace GarageManagement
 {
-    partial class LoginForm
+    partial class frmLogin
     {
         /// <summary>
         /// Required designer variable.
@@ -32,16 +32,18 @@
             this.btnLogin = new System.Windows.Forms.Button();
             this.txbPassword = new System.Windows.Forms.TextBox();
             this.txbUsername = new System.Windows.Forms.TextBox();
+            this.btnExit = new System.Windows.Forms.Button();
             this.pnl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnl1
             // 
             this.pnl1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnl1.Controls.Add(this.btnExit);
             this.pnl1.Controls.Add(this.btnLogin);
             this.pnl1.Controls.Add(this.txbPassword);
             this.pnl1.Controls.Add(this.txbUsername);
-            this.pnl1.Location = new System.Drawing.Point(40, 179);
+            this.pnl1.Location = new System.Drawing.Point(206, 161);
             this.pnl1.Name = "pnl1";
             this.pnl1.Size = new System.Drawing.Size(300, 200);
             this.pnl1.TabIndex = 0;
@@ -51,7 +53,7 @@
             this.btnLogin.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLogin.Location = new System.Drawing.Point(95, 130);
+            this.btnLogin.Location = new System.Drawing.Point(18, 133);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(112, 50);
             this.btnLogin.TabIndex = 0;
@@ -78,11 +80,24 @@
             this.txbUsername.Size = new System.Drawing.Size(261, 40);
             this.txbUsername.TabIndex = 1;
             // 
+            // btnExit
+            // 
+            this.btnExit.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExit.Location = new System.Drawing.Point(167, 133);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(112, 50);
+            this.btnExit.TabIndex = 1;
+            this.btnExit.Text = "Thoát";
+            this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(382, 553);
+            this.ClientSize = new System.Drawing.Size(743, 476);
             this.Controls.Add(this.pnl1);
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -100,6 +115,7 @@
         private System.Windows.Forms.TextBox txbUsername;
         private System.Windows.Forms.TextBox txbPassword;
         private System.Windows.Forms.Button btnLogin;
+        private System.Windows.Forms.Button btnExit;
     }
 }
 

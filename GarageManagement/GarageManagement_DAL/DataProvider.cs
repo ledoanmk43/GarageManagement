@@ -19,7 +19,7 @@ namespace GarageManagement_DAL
         }
 
         private DataProvider() { }
-        private string ConnectionString = "Data Source=LAPTOP-UGOQ4HS6;Initial Catalog=GARAGEMANAGEMENT;Integrated Security=True";
+        private string ConnectionString = @"Data Source=LAPTOP-FRB1TH08\SQLEXPRESS;Initial Catalog=GARAGEMANAGEMENT;Integrated Security=True";
 
         public DataTable ExecuteQuery(string query, object[] parameter = null)
         {

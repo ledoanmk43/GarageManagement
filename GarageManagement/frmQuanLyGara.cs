@@ -13,13 +13,13 @@ namespace GarageManagement
 {
     public partial class AdministratorForm : Form
     {
-        private Account loginAccount;
-        public Account LoginAccount
+        private AccountDTO loginAccount;
+        public AccountDTO LoginAccount
         {
             get { return loginAccount; }
             set { loginAccount = value; } //ChangeAccount(loginAccount.AccessLevel); }
         }
-        public AdministratorForm(Account acc)
+        public AdministratorForm(AccountDTO acc)
         {
             InitializeComponent();
             this.LoginAccount = acc;   
@@ -28,6 +28,11 @@ namespace GarageManagement
         {
                 
         }
-        
+
+        private void mnsDanhmuc_Click(object sender, EventArgs e)
+        {
+            frmDanhMuc f = new frmDanhMuc();
+            f.Show();
+        }
     }
 }

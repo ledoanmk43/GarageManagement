@@ -13,9 +13,9 @@ using GarageManagement_DTO;
 
 namespace GarageManagement
 {
-    public partial class LoginForm : Form
+    public partial class frmLogin : Form
     {
-        public LoginForm()
+        public frmLogin()
         {
             InitializeComponent();
             txbUsername.Select();
@@ -37,7 +37,7 @@ namespace GarageManagement
             {
                 try
                 {
-                    Account loginAccount = AccountDAL.Instance.GetAccountByUserName(userName);
+                    AccountDTO loginAccount = AccountDAL.Instance.GetAccountByUserName(userName);
                     AdministratorForm adminFrom = new AdministratorForm(loginAccount);
                     this.Hide();
                     adminFrom.ShowDialog();
@@ -59,6 +59,11 @@ namespace GarageManagement
         {
             
             return AccountDAL.Instance.Login(userName, passWord);
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

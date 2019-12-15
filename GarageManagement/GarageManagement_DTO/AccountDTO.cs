@@ -7,16 +7,16 @@ using System.Threading.Tasks;
 
 namespace GarageManagement_DTO
 {
-    public class Account
+    public class AccountDTO
     {
-        public Account(string id, string userName, int accesslevel, string Pass)
+        public AccountDTO(string id, string userName, int accesslevel, string Pass)
         {
             this.ID = id;
             this.UserName = userName;
             this.Password = Pass;
             this.AccessLevel = accesslevel;
         }
-        public Account(DataRow row)
+        public AccountDTO(DataRow row)
         {
             this.ID = row["id"].ToString();
             this.UserName = row["userName"].ToString();

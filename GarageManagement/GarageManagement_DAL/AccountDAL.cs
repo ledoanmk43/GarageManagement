@@ -32,12 +32,12 @@ namespace GarageManagement_DAL
            DataTable result = DataProvider.Instance.ExecuteQuery(query, new object[] { userName, passWord });
             return result.Rows.Count > 0;
         }
-        public Account GetAccountByUserName(string userName)
+        public AccountDTO GetAccountByUserName(string userName)
         {
-            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT * FROM PASSWORD WHERE USERNAME = '" + userName + "'");
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT * FROM account WHERE USERNAME = '" + userName + "'");
             foreach(DataRow item in data.Rows)
             {           
-                return new Account(item);
+                return new AccountDTO(item);
             }
             return null;
         }
