@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.pnl1 = new System.Windows.Forms.Panel();
-            this.txbUsername = new System.Windows.Forms.TextBox();
-            this.txbPassword = new System.Windows.Forms.TextBox();
             this.btnLogin = new System.Windows.Forms.Button();
+            this.txbPassword = new System.Windows.Forms.TextBox();
+            this.txbUsername = new System.Windows.Forms.TextBox();
             this.pnl1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,25 +46,6 @@
             this.pnl1.Size = new System.Drawing.Size(300, 200);
             this.pnl1.TabIndex = 0;
             // 
-            // txbUsername
-            // 
-            this.txbUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbUsername.Location = new System.Drawing.Point(18, 12);
-            this.txbUsername.Multiline = true;
-            this.txbUsername.Name = "txbUsername";
-            this.txbUsername.Size = new System.Drawing.Size(261, 40);
-            this.txbUsername.TabIndex = 1;
-            // 
-            // txbPassword
-            // 
-            this.txbPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbPassword.Location = new System.Drawing.Point(18, 69);
-            this.txbPassword.Multiline = true;
-            this.txbPassword.Name = "txbPassword";
-            this.txbPassword.PasswordChar = '●';
-            this.txbPassword.Size = new System.Drawing.Size(261, 40);
-            this.txbPassword.TabIndex = 2;
-            // 
             // btnLogin
             // 
             this.btnLogin.BackColor = System.Drawing.SystemColors.ActiveBorder;
@@ -76,6 +57,26 @@
             this.btnLogin.TabIndex = 0;
             this.btnLogin.Text = "Đăng nhập";
             this.btnLogin.UseVisualStyleBackColor = false;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            // 
+            // txbPassword
+            // 
+            this.txbPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbPassword.Location = new System.Drawing.Point(18, 69);
+            this.txbPassword.Multiline = true;
+            this.txbPassword.Name = "txbPassword";
+            this.txbPassword.PasswordChar = '●';
+            this.txbPassword.Size = new System.Drawing.Size(261, 40);
+            this.txbPassword.TabIndex = 2;
+            // 
+            // txbUsername
+            // 
+            this.txbUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbUsername.Location = new System.Drawing.Point(18, 12);
+            this.txbUsername.Multiline = true;
+            this.txbUsername.Name = "txbUsername";
+            this.txbUsername.Size = new System.Drawing.Size(261, 40);
+            this.txbUsername.TabIndex = 1;
             // 
             // LoginForm
             // 

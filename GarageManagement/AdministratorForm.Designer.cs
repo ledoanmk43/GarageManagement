@@ -1,0 +1,187 @@
+﻿namespace GarageManagement
+{
+    partial class AdministratorForm
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.mnsDanhmuc = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsHSKH = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsPhieusuachua = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsPhieuthutien = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnsBaocao = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsDoanhSo = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsTonKho = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnsTaiKhoan = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsQuanlykho = new System.Windows.Forms.ToolStripMenuItem();
+            this.adminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsTTTK = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsDangXuat = new System.Windows.Forms.ToolStripMenuItem();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.menuStrip1.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnsDanhmuc,
+            this.mnsBaocao,
+            this.mnsTaiKhoan,
+            this.adminToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1262, 28);
+            this.menuStrip1.TabIndex = 0;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // mnsDanhmuc
+            // 
+            this.mnsDanhmuc.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsHSKH,
+            this.tsPhieusuachua,
+            this.tsPhieuthutien,
+            this.tsQuanlykho});
+            this.mnsDanhmuc.Name = "mnsDanhmuc";
+            this.mnsDanhmuc.Size = new System.Drawing.Size(88, 24);
+            this.mnsDanhmuc.Text = "Danh mục";
+            // 
+            // tsHSKH
+            // 
+            this.tsHSKH.Name = "tsHSKH";
+            this.tsHSKH.Size = new System.Drawing.Size(216, 26);
+            this.tsHSKH.Text = "Hồ sơ khách hàng";
+            // 
+            // tsPhieusuachua
+            // 
+            this.tsPhieusuachua.Name = "tsPhieusuachua";
+            this.tsPhieusuachua.Size = new System.Drawing.Size(216, 26);
+            this.tsPhieusuachua.Text = "Phiếu sửa chữa";
+            // 
+            // tsPhieuthutien
+            // 
+            this.tsPhieuthutien.Name = "tsPhieuthutien";
+            this.tsPhieuthutien.Size = new System.Drawing.Size(216, 26);
+            this.tsPhieuthutien.Text = "Phiếu thu tiền";
+            // 
+            // mnsBaocao
+            // 
+            this.mnsBaocao.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsDoanhSo,
+            this.tsTonKho});
+            this.mnsBaocao.Name = "mnsBaocao";
+            this.mnsBaocao.Size = new System.Drawing.Size(152, 24);
+            this.mnsBaocao.Text = "Báo cáo kinh doanh";
+            // 
+            // tsDoanhSo
+            // 
+            this.tsDoanhSo.Name = "tsDoanhSo";
+            this.tsDoanhSo.Size = new System.Drawing.Size(216, 26);
+            this.tsDoanhSo.Text = "Báo cáo doanh số";
+            // 
+            // tsTonKho
+            // 
+            this.tsTonKho.Name = "tsTonKho";
+            this.tsTonKho.Size = new System.Drawing.Size(216, 26);
+            this.tsTonKho.Text = "Báo cáo tồn kho";
+            // 
+            // mnsTaiKhoan
+            // 
+            this.mnsTaiKhoan.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsTTTK,
+            this.tsDangXuat});
+            this.mnsTaiKhoan.Name = "mnsTaiKhoan";
+            this.mnsTaiKhoan.Size = new System.Drawing.Size(83, 24);
+            this.mnsTaiKhoan.Text = "Tài khoản";
+            // 
+            // tsQuanlykho
+            // 
+            this.tsQuanlykho.Name = "tsQuanlykho";
+            this.tsQuanlykho.Size = new System.Drawing.Size(216, 26);
+            this.tsQuanlykho.Text = "Quản lý kho";
+            // 
+            // adminToolStripMenuItem
+            // 
+            this.adminToolStripMenuItem.Name = "adminToolStripMenuItem";
+            this.adminToolStripMenuItem.Size = new System.Drawing.Size(65, 24);
+            this.adminToolStripMenuItem.Text = "Admin";
+            // 
+            // tsTTTK
+            // 
+            this.tsTTTK.Name = "tsTTTK";
+            this.tsTTTK.Size = new System.Drawing.Size(216, 26);
+            this.tsTTTK.Text = "Thông tin tài khoản";
+            // 
+            // tsDangXuat
+            // 
+            this.tsDangXuat.Name = "tsDangXuat";
+            this.tsDangXuat.Size = new System.Drawing.Size(216, 26);
+            this.tsDangXuat.Text = "Đăng xuất";
+            // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(226, 298);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1024, 320);
+            this.panel1.TabIndex = 1;
+            // 
+            // AdministratorForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1262, 673);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
+            this.Name = "AdministratorForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Quản lý Gara";
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem mnsDanhmuc;
+        private System.Windows.Forms.ToolStripMenuItem tsHSKH;
+        private System.Windows.Forms.ToolStripMenuItem tsPhieusuachua;
+        private System.Windows.Forms.ToolStripMenuItem tsPhieuthutien;
+        private System.Windows.Forms.ToolStripMenuItem tsQuanlykho;
+        private System.Windows.Forms.ToolStripMenuItem mnsBaocao;
+        private System.Windows.Forms.ToolStripMenuItem tsDoanhSo;
+        private System.Windows.Forms.ToolStripMenuItem tsTonKho;
+        private System.Windows.Forms.ToolStripMenuItem mnsTaiKhoan;
+        private System.Windows.Forms.ToolStripMenuItem adminToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tsTTTK;
+        private System.Windows.Forms.ToolStripMenuItem tsDangXuat;
+        private System.Windows.Forms.Panel panel1;
+    }
+}

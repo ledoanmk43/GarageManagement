@@ -8,3 +8,11 @@ C:\Users\Admin\Documents\GitHub\GarageManagement\GarageManagement\obj\Debug\Gara
 C:\Users\Admin\Documents\GitHub\GarageManagement\GarageManagement\obj\Debug\GarageManagement_GUI.csproj.CoreCompileInputs.cache
 C:\Users\Admin\Documents\GitHub\GarageManagement\GarageManagement\obj\Debug\GarageManagement.exe
 C:\Users\Admin\Documents\GitHub\GarageManagement\GarageManagement\obj\Debug\GarageManagement.pdb
+C:\Users\Admin\Documents\GitHub\GarageManagement\GarageManagement\obj\Debug\GarageManagement.AdministratorForm.resources
+C:\Users\Admin\Documents\GitHub\GarageManagement\GarageManagement\bin\Debug\GarageManagement_DAL.exe
+C:\Users\Admin\Documents\GitHub\GarageManagement\GarageManagement\bin\Debug\GarageManagement_DAL.pdb
+C:\Users\Admin\Documents\GitHub\GarageManagement\GarageManagement\bin\Debug\GarageManagement_DAL.exe.config
+C:\Users\Admin\Documents\GitHub\GarageManagement\GarageManagement\obj\Debug\GarageManagement_GUI.csproj.CopyComplete
+C:\Users\Admin\Documents\GitHub\GarageManagement\GarageManagement\bin\Debug\GarageManagement_DTO.exe
+C:\Users\Admin\Documents\GitHub\GarageManagement\GarageManagement\bin\Debug\GarageManagement_DTO.pdb
+C:\Users\Admin\Documents\GitHub\GarageManagement\GarageManagement\bin\Debug\GarageManagement_DTO.exe.config
