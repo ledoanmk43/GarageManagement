@@ -6,8 +6,10 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -18,6 +20,7 @@ namespace GarageManagement
         BindingSource khachhangList = new BindingSource();
         BindingSource khoList = new BindingSource();
         BindingSource xeList = new BindingSource();
+        BindingSource pscList = new BindingSource();
         public frmDanhMuc()
         {
             InitializeComponent();
@@ -30,12 +33,15 @@ namespace GarageManagement
             dgvKhachHang.DataSource = khachhangList;
             dgvKho.DataSource = khoList;
             dgvXe.DataSource = xeList;
+            dgvPSC.DataSource = pscList;
             LoadListKhachHang();
             AddBindingKhachHang();
             LoadKho();
             AddBindingKho();
             LoadListXe();
             AddBindingXe();
+            LoadListPSC();
+            AddBindingPSC();
         }
         void LoadListKhachHang()
         {
@@ -50,6 +56,19 @@ namespace GarageManagement
         void LoadListXe()
         {
             xeList.DataSource = XeDAL.Instance.GetListXe();
+        }
+
+        void LoadListPSC()
+        {          
+            pscList.DataSource = PhieuSuaChuaDAL.Instance.GetListPhieuSuaChua();
+            LoadTotalPricePSC((float)Convert.ToDouble(txtTotalPricePSC.Text));
+        }
+
+        void LoadTotalPricePSC(float totalPricePSC)
+        {
+            CultureInfo culture = new CultureInfo("vi-VN");
+            Thread.CurrentThread.CurrentCulture = culture;
+            txtTotalPricePSC.Text = totalPricePSC.ToString("c", culture);
         }
         List<KhachHangDTO> SearchKhachHang(string text)
         {
@@ -84,6 +103,19 @@ namespace GarageManagement
             txtHieuXe.DataBindings.Add(new Binding("Text", dgvXe.DataSource, "carbrand", true, DataSourceUpdateMode.Never));
             txtIDKH_XE.DataBindings.Add(new Binding("Text", dgvXe.DataSource, "idkh", true, DataSourceUpdateMode.Never));
         }
+
+        void AddBindingPSC()
+        {
+            txtIDPSC.DataBindings.Add(new Binding("Text", dgvPSC.DataSource, "idpsc", true, DataSourceUpdateMode.Never));
+            txtMaXe_PSC.DataBindings.Add(new Binding("Text", dgvPSC.DataSource, "carnumber", true, DataSourceUpdateMode.Never));
+            txtMaVatLieu_PSC.DataBindings.Add(new Binding("Text", dgvPSC.DataSource, "iditem", true, DataSourceUpdateMode.Never));
+            txtNoiDungPSC.DataBindings.Add(new Binding("Text", dgvPSC.DataSource, "detail", true, DataSourceUpdateMode.Never));
+            dtpNgayTaoPSC.DataBindings.Add(new Binding("Value", dgvPSC.DataSource, "createddate", true, DataSourceUpdateMode.Never));
+            txtDonGiaPSC.DataBindings.Add(new Binding("Text", dgvPSC.DataSource, "dongia", true, DataSourceUpdateMode.Never));
+            txtTienCongPSC.DataBindings.Add(new Binding("Text", dgvPSC.DataSource, "tiencong", true, DataSourceUpdateMode.Never));
+            txtTotalPricePSC.DataBindings.Add(new Binding("Text", dgvPSC.DataSource, "totalprice", true, DataSourceUpdateMode.Never));
+            
+        }
         #endregion
         
         #region events
@@ -95,7 +127,7 @@ namespace GarageManagement
             string name = txtTenKhachHang.Text;
             string DiaChi = txtDiaChi.Text;
             int DienThoai = Convert.ToInt32(txtDienThoai.Text);
-            DateTime Ngaygui = dtpNgayGui.Value;
+            DateTime? Ngaygui = dtpNgayGui.Value;
             float Tienno = (float)Convert.ToDouble(txtTienNo.Text);
             if (KhachHangDAL.Instance.InsertKhachHang(id, name, DiaChi, DienThoai, Ngaygui, Tienno))
             {
@@ -130,7 +162,7 @@ namespace GarageManagement
             string name = txtTenKhachHang.Text;
             string DiaChi = txtDiaChi.Text;
             int DienThoai = Convert.ToInt32(txtDienThoai.Text);
-            DateTime Ngaygui = dtpNgayGui.Value;
+            DateTime? Ngaygui = dtpNgayGui.Value;
             float Tienno = (float)Convert.ToDouble(txtTienNo.Text);
             if (KhachHangDAL.Instance.UpdateKhachHang(name, DiaChi, DienThoai, Ngaygui, Tienno, id))
             {
@@ -209,8 +241,8 @@ namespace GarageManagement
             int iditem = Convert.ToInt32(txtMaSoVatLieu.Text);
             string item = txtVatLieu.Text;
             int slitem = Convert.ToInt32(nmSoLuongVatLieu.Text);
-            DateTime importteddate = dtpNgayNhap.Value;
-            DateTime exportteddate = dtpNgayXuat.Value;
+            DateTime? importteddate = dtpNgayNhap.Value;
+            DateTime? exportteddate = dtpNgayXuat.Value;
             if (KhoGaraDAL.Instance.InsertKho(iditem, item , slitem, importteddate, exportteddate))
             {
                 MessageBox.Show("Thêm vào kho thành công");
@@ -221,7 +253,6 @@ namespace GarageManagement
                 MessageBox.Show("Thêm vào kho lỗi !!");
             }
         }
-
 
         private void btnXemKho_Click(object sender, EventArgs e)
         {
@@ -252,8 +283,8 @@ namespace GarageManagement
             int iditem = Convert.ToInt32(txtMaSoVatLieu.Text);
             string item = txtVatLieu.Text;
             int slitem = Convert.ToInt32(nmSoLuongVatLieu.Text);
-            DateTime importteddate = dtpNgayNhap.Value;
-            DateTime exportteddate = dtpNgayXuat.Value;
+            DateTime? importteddate = dtpNgayNhap.Value;
+            DateTime? exportteddate = dtpNgayXuat.Value;
             if (KhoGaraDAL.Instance.UpdateKho(iditem, item, slitem, importteddate, exportteddate))
             {
                 MessageBox.Show("Cập nhật kho thành công");
@@ -264,6 +295,68 @@ namespace GarageManagement
                 MessageBox.Show("Cập nhật kho lỗi !!");
             }
         }
+
+        private void btnXemPSC_Click(object sender, EventArgs e)
+        {
+            LoadListPSC();
+        }
+
+        private void btnSuaPSC_Click(object sender, EventArgs e)
+        {
+            int idpsc = Convert.ToInt32(txtIDPSC.Text);
+            int carnumber = Convert.ToInt32(txtMaXe_PSC.Text);
+            int iditem = Convert.ToInt32(txtMaVatLieu_PSC.Text);
+            string detail = txtNoiDungPSC.Text;
+            DateTime? createddate = dtpNgayTaoPSC.Value;
+            float dongia = (float)Convert.ToDouble(txtDonGiaPSC.Text);
+            float tiencong = (float)Convert.ToDouble(txtTienCongPSC.Text);
+            float totalprice = dongia + tiencong;
+            if (PhieuSuaChuaDAL.Instance.UpdatePhieuSuaChua(idpsc, carnumber, iditem, detail, createddate, dongia, tiencong, totalprice))
+            {
+                MessageBox.Show("Cập nhật phiếu sửa chữa thành công");
+                LoadListPSC();
+            }
+            else
+            {
+                MessageBox.Show("Cập nhật phiếu lỗi !!");
+            }
+        }
+
+        private void btnXoaPSC_Click(object sender, EventArgs e)
+        {
+            int idpsc = Convert.ToInt32(txtIDPSC.Text);
+            if (PhieuSuaChuaDAL.Instance.DeletePhieuSuaChua(idpsc)) 
+            {
+                MessageBox.Show("xóa phiếu sửa chữa thành công");
+                LoadListPSC();
+            }
+            else
+            {
+                MessageBox.Show("xóa phiếu lỗi !!");
+            }
+        }
+
+        private void btnThemPSC_Click(object sender, EventArgs e)
+        {
+            int idpsc = Convert.ToInt32(txtIDPSC.Text);
+            int carnumber = Convert.ToInt32(txtMaXe_PSC.Text);
+            int iditem = Convert.ToInt32(txtMaVatLieu_PSC.Text);
+            string detail = txtNoiDungPSC.Text;
+            DateTime? createddate = dtpNgayTaoPSC.Value;
+            float dongia = (float)Convert.ToDouble(txtDonGiaPSC.Text);
+            float tiencong = (float)Convert.ToDouble(txtTienCongPSC.Text);
+            float totalprice = dongia + tiencong;
+            if (PhieuSuaChuaDAL.Instance.InsertPhieuSuaChua(idpsc, carnumber, iditem,  detail, createddate,  dongia, tiencong, totalprice))
+            {
+                MessageBox.Show("Thêm vào phiếu sửa chữa thành công");
+                LoadListPSC();
+            }
+            else
+            {
+                MessageBox.Show("Thêm vào phiếu lỗi !!");
+            }
+        }
+
         #endregion
 
 

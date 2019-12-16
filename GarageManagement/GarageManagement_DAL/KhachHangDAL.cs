@@ -37,7 +37,7 @@ namespace GarageManagement_DAL
             return khachhangList;
         }
 
-        public bool InsertKhachHang(int id  ,string customername, string address , int phone , DateTime createdate , float debt)
+        public bool InsertKhachHang(int id  ,string customername, string address , int phone , DateTime? createdate , float debt)
         {
             string query = "insert dbo.hosokhachhang (id , customername , address , phone , createddate , debt )";
             query += string.Format("values ( {0} , N'{1}' , N'{2}' , {3} , N'{4}' , {5} )", id , customername, address, phone, createdate, debt );
@@ -45,7 +45,7 @@ namespace GarageManagement_DAL
             return result > 0;
         }
 
-        public bool UpdateKhachHang(string customername, string address, int phone, DateTime createdate, float debt , int id )
+        public bool UpdateKhachHang(string customername, string address, int phone, DateTime? createdate, float debt , int id )
         {
             string query = "update dbo.hosokhachhang set ";
             query += string.Format("  customername = N'{0}' , address = N'{1}' , phone = {2} , createddate = N'{3}' , debt = {4} where id = {5} ", customername,  address, phone, createdate, debt , id );

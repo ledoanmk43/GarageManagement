@@ -30,10 +30,6 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.mnsDanhmuc = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsHSKH = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsPhieusuachua = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsPhieuthutien = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsQuanlykho = new System.Windows.Forms.ToolStripMenuItem();
             this.mnsBaocao = new System.Windows.Forms.ToolStripMenuItem();
             this.tsDoanhSo = new System.Windows.Forms.ToolStripMenuItem();
             this.tsTonKho = new System.Windows.Forms.ToolStripMenuItem();
@@ -61,39 +57,10 @@
             // 
             // mnsDanhmuc
             // 
-            this.mnsDanhmuc.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsHSKH,
-            this.tsPhieusuachua,
-            this.tsPhieuthutien,
-            this.tsQuanlykho});
             this.mnsDanhmuc.Name = "mnsDanhmuc";
             this.mnsDanhmuc.Size = new System.Drawing.Size(90, 24);
             this.mnsDanhmuc.Text = "Danh mục";
             this.mnsDanhmuc.Click += new System.EventHandler(this.mnsDanhmuc_Click);
-            // 
-            // tsHSKH
-            // 
-            this.tsHSKH.Name = "tsHSKH";
-            this.tsHSKH.Size = new System.Drawing.Size(224, 26);
-            this.tsHSKH.Text = "Hồ sơ khách hàng";
-            // 
-            // tsPhieusuachua
-            // 
-            this.tsPhieusuachua.Name = "tsPhieusuachua";
-            this.tsPhieusuachua.Size = new System.Drawing.Size(224, 26);
-            this.tsPhieusuachua.Text = "Phiếu sửa chữa";
-            // 
-            // tsPhieuthutien
-            // 
-            this.tsPhieuthutien.Name = "tsPhieuthutien";
-            this.tsPhieuthutien.Size = new System.Drawing.Size(224, 26);
-            this.tsPhieuthutien.Text = "Phiếu thu tiền";
-            // 
-            // tsQuanlykho
-            // 
-            this.tsQuanlykho.Name = "tsQuanlykho";
-            this.tsQuanlykho.Size = new System.Drawing.Size(224, 26);
-            this.tsQuanlykho.Text = "Quản lý kho";
             // 
             // mnsBaocao
             // 
@@ -172,10 +139,6 @@
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem mnsDanhmuc;
-        private System.Windows.Forms.ToolStripMenuItem tsHSKH;
-        private System.Windows.Forms.ToolStripMenuItem tsPhieusuachua;
-        private System.Windows.Forms.ToolStripMenuItem tsPhieuthutien;
-        private System.Windows.Forms.ToolStripMenuItem tsQuanlykho;
         private System.Windows.Forms.ToolStripMenuItem mnsBaocao;
         private System.Windows.Forms.ToolStripMenuItem tsDoanhSo;
         private System.Windows.Forms.ToolStripMenuItem tsTonKho;
