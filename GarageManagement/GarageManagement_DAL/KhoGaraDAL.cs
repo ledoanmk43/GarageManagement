@@ -25,16 +25,16 @@ namespace GarageManagement.GarageManagement_DAL
             }
         }
 
-        public List<KhoGaraDTO> GetListKho()
+        public DataTable GetListKho()
         {
-            List<KhoGaraDTO> khoList = new List<KhoGaraDTO>();
-            DataTable data = DataProvider.Instance.ExecuteQuery("select * from dbo.khogarage");
-            foreach (DataRow item in data.Rows)
-            {
-                KhoGaraDTO kho = new KhoGaraDTO(item);
-                khoList.Add(kho);
-            }
-            return khoList;
+            //List<KhoGaraDTO> khoList = new List<KhoGaraDTO>();
+          return /* DataTable data = */DataProvider.Instance.ExecuteQuery("select iditem as [Mã số vật liệu], item as [Tên vật liệu] ,slitem as [Số lượng vật liệu] , importeddate as [Ngày nhập] ,exporteddate as [Ngày xuất] from dbo.khogarage");
+            //foreach (DataRow item in data.Rows)
+            //{
+            //    KhoGaraDTO kho = new KhoGaraDTO(item);
+            //    khoList.Add(kho);
+            //}
+            //return khoList;
         }
 
         public bool InsertKho( int iditem, string item , int slitem , DateTime? importeddate , DateTime? exporteddate)
