@@ -68,9 +68,11 @@
     <Compile Include="GarageManagement_DAL\DataProvider.cs" />
     <Compile Include="GarageManagement_DAL\KhachHangDAL.cs" />
     <Compile Include="GarageManagement_DAL\KhoGaraDAL.cs" />
+    <Compile Include="GarageManagement_DAL\XeDAL.cs" />
     <Compile Include="GarageManagement_DTO\AccountDTO.cs" />
     <Compile Include="GarageManagement_DTO\KhachHangDTO.cs" />
     <Compile Include="GarageManagement_DTO\KhoGaraDTO.cs" />
+    <Compile Include="GarageManagement_DTO\XeDTO.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmDanhMuc.resx">

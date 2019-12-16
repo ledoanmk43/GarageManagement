@@ -13,7 +13,7 @@ namespace GarageManagement_DAL
     {   
         private static AccountDAL instance;
 
-        public static AccountDAL Instance
+        internal static AccountDAL Instance
         {
             get
             {

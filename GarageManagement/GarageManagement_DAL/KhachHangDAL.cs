@@ -37,25 +37,25 @@ namespace GarageManagement_DAL
             return khachhangList;
         }
 
-        public bool InsertKhachHang(int id , string carnumber ,string customername , string carbrand , string address , int phone , DateTime createdate , float debt)
+        public bool InsertKhachHang(int id  ,string customername, string address , int phone , DateTime createdate , float debt)
         {
-            string query = "insert dbo.hosokhachhang (id , customername , carnumber , carbrand , address , phone , createddate , debt )";
-            query += string.Format("values ( {6} , N'{0}' ,N'{7}', N'{1}' , N'{2}' , {3} , N'{4}' , {5} )", customername, carbrand, address, phone, createdate, debt, id , carnumber);
+            string query = "insert dbo.hosokhachhang (id , customername , address , phone , createddate , debt )";
+            query += string.Format("values ( {0} , N'{1}' , N'{2}' , {3} , N'{4}' , {5} )", id , customername, address, phone, createdate, debt );
             int result = DataProvider.Instance.ExecuteNonQuery(query);
             return result > 0;
         }
 
-        public bool UpdateKhachHang(string customername, string carbrand, string address, int phone, DateTime createdate, float debt , int id , string soxe)
+        public bool UpdateKhachHang(string customername, string address, int phone, DateTime createdate, float debt , int id )
         {
             string query = "update dbo.hosokhachhang set ";
-            query += string.Format(" customername = N'{0}' , carbrand =N'{1}' , address = N'{2}' , phone = N'{3}' , createddate = N'{4}' , debt = {5} where id = {6} and carnumber = {7} ", customername, carbrand, address, phone, createdate, debt , id , soxe);
+            query += string.Format("  customername = N'{0}' , address = N'{1}' , phone = {2} , createddate = N'{3}' , debt = {4} where id = {5} ", customername,  address, phone, createdate, debt , id );
             int result = DataProvider.Instance.ExecuteNonQuery(query);
             return result > 0;
         }
 
-        public bool DeleteKhachHang( int id, string soxe)
+        public bool DeleteKhachHang( int id)
         {
-            string query = string.Format("delete dbo.hosokhachhang where id = {0} and carnumber = {1}", id ,soxe);     
+            string query = string.Format("delete dbo.hosokhachhang where id = {0} ", id );     
             int result = DataProvider.Instance.ExecuteNonQuery(query);
             return result > 0;
         }
