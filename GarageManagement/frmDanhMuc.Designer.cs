@@ -92,6 +92,8 @@
             this.dtpNgayNhap = new System.Windows.Forms.DateTimePicker();
             this.dtpNgayXuat = new System.Windows.Forms.DateTimePicker();
             this.nmSoLuongVatLieu = new System.Windows.Forms.NumericUpDown();
+            this.tpPhieuSuaChua = new System.Windows.Forms.TabPage();
+            this.tpPhieuThuTien = new System.Windows.Forms.TabPage();
             this.tbKhachHang.SuspendLayout();
             this.tpKhachHang.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKhachHang)).BeginInit();
@@ -108,6 +110,8 @@
             this.tbKhachHang.Controls.Add(this.tpKhachHang);
             this.tbKhachHang.Controls.Add(this.tpHieuXe);
             this.tbKhachHang.Controls.Add(this.tpKho);
+            this.tbKhachHang.Controls.Add(this.tpPhieuSuaChua);
+            this.tbKhachHang.Controls.Add(this.tpPhieuThuTien);
             this.tbKhachHang.Location = new System.Drawing.Point(1, 0);
             this.tbKhachHang.Name = "tbKhachHang";
             this.tbKhachHang.SelectedIndex = 0;
@@ -824,6 +828,26 @@
             this.nmSoLuongVatLieu.Size = new System.Drawing.Size(303, 27);
             this.nmSoLuongVatLieu.TabIndex = 107;
             // 
+            // tpPhieuSuaChua
+            // 
+            this.tpPhieuSuaChua.Location = new System.Drawing.Point(4, 25);
+            this.tpPhieuSuaChua.Name = "tpPhieuSuaChua";
+            this.tpPhieuSuaChua.Padding = new System.Windows.Forms.Padding(3);
+            this.tpPhieuSuaChua.Size = new System.Drawing.Size(1111, 626);
+            this.tpPhieuSuaChua.TabIndex = 3;
+            this.tpPhieuSuaChua.Text = "Phiếu Sửa Chữa";
+            this.tpPhieuSuaChua.UseVisualStyleBackColor = true;
+            // 
+            // tpPhieuThuTien
+            // 
+            this.tpPhieuThuTien.Location = new System.Drawing.Point(4, 25);
+            this.tpPhieuThuTien.Name = "tpPhieuThuTien";
+            this.tpPhieuThuTien.Padding = new System.Windows.Forms.Padding(3);
+            this.tpPhieuThuTien.Size = new System.Drawing.Size(1111, 626);
+            this.tpPhieuThuTien.TabIndex = 4;
+            this.tpPhieuThuTien.Text = "Phiếu Thu Tiền";
+            this.tpPhieuThuTien.UseVisualStyleBackColor = true;
+            // 
             // frmDanhMuc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -915,5 +939,7 @@
         private System.Windows.Forms.NumericUpDown nmSoLuongVatLieu;
         private System.Windows.Forms.DateTimePicker dtpNgayXuat;
         private System.Windows.Forms.DateTimePicker dtpNgayNhap;
+        private System.Windows.Forms.TabPage tpPhieuSuaChua;
+        private System.Windows.Forms.TabPage tpPhieuThuTien;
     }
 }
