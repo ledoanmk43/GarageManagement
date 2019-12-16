@@ -70,11 +70,11 @@ namespace GarageManagement
         void AddBindingKho()
         {
             
-            txtMaSoVatLieu.DataBindings.Add(new Binding("Text", dgvKho.DataSource, "Mã số vật liệu", true, DataSourceUpdateMode.Never));
-            txtVatLieu.DataBindings.Add(new Binding("Text", dgvKho.DataSource, "Tên vật liệu", true, DataSourceUpdateMode.Never));
-            nmSoLuongVatLieu.DataBindings.Add(new Binding("Text", dgvKho.DataSource, "Số lượng vật liệu", true, DataSourceUpdateMode.Never));
-            dtpNgayNhap.DataBindings.Add(new Binding("Value", dgvKho.DataSource, "Ngày nhập", true, DataSourceUpdateMode.Never));
-            dtpNgayXuat.DataBindings.Add(new Binding("Value", dgvKho.DataSource, "Ngày xuất", true, DataSourceUpdateMode.Never));
+            txtMaSoVatLieu.DataBindings.Add(new Binding("Text", dgvKho.DataSource, "iditem", true, DataSourceUpdateMode.Never));
+            txtVatLieu.DataBindings.Add(new Binding("Text", dgvKho.DataSource, "item", true, DataSourceUpdateMode.Never));
+            nmSoLuongVatLieu.DataBindings.Add(new Binding("Text", dgvKho.DataSource, "slitem", true, DataSourceUpdateMode.Never));
+            dtpNgayNhap.DataBindings.Add(new Binding("Value", dgvKho.DataSource, "importeddate", true, DataSourceUpdateMode.Never));
+            dtpNgayXuat.DataBindings.Add(new Binding("Value", dgvKho.DataSource, "exporteddate", true, DataSourceUpdateMode.Never));
 
         }
 
