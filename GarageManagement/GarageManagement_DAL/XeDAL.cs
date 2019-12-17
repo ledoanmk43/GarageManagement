@@ -53,9 +53,9 @@ namespace GarageManagement.GarageManagement_DAL
             return result > 0;
         }
 
-        public bool UpdateXe( string carbrand , int carnumber)
+        public bool UpdateXe( string carbrand , int carnumber , int idkh)
         {
-            string query = string.Format("update dbo.xe set carbrand = N'{0}' where carnumber = {1}", carbrand ,carnumber);
+            string query = string.Format("update dbo.xe set carbrand = N'{0}' , idkh = {1} where carnumber = {2}", carbrand ,idkh ,carnumber );
             int result = DataProvider.Instance.ExecuteNonQuery(query);
             return result > 0;
         }

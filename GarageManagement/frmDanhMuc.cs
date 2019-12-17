@@ -153,7 +153,7 @@ namespace GarageManagement
                         MessageBox.Show("Thêm Khách Hàng lỗi !!");
                     }
                 }
-                catch { }
+                catch (Exception ex) { MessageBox.Show("Thêm khách hàng lỗi !! " + ex.Message); }
             }
         }
 
@@ -176,7 +176,7 @@ namespace GarageManagement
                     }
 
                 }
-                catch  { }
+                catch (Exception ex) { MessageBox.Show("Xóa khách hàng lỗi !! " + ex.Message); }
             }   
         }   
 
@@ -204,7 +204,7 @@ namespace GarageManagement
                         MessageBox.Show("Sửa Khách Hàng lỗi !!");
                     }
                 }
-                catch  {  }
+                catch (Exception ex) { MessageBox.Show("Sửa khách hàng lỗi !! " + ex.Message); }
             }
         }
         private void btnXemKhachHang_Click_1(object sender, EventArgs e)
@@ -231,7 +231,8 @@ namespace GarageManagement
                 {
                     int maxe = Convert.ToInt32(txtMaXe.Text);
                     string hieuxe = txtHieuXe.Text;
-                    if (XeDAL.Instance.UpdateXe(hieuxe, maxe))
+                    int idkh = Convert.ToInt32(txtIDKH_XE.Text);
+                    if (XeDAL.Instance.UpdateXe(hieuxe, maxe, idkh))
                     {
                         MessageBox.Show("Cập nhật xe thành công");
                         LoadListXe();
@@ -242,7 +243,7 @@ namespace GarageManagement
                         MessageBox.Show("Cập nhật xe lỗi !!");
                     }
                 }
-                catch { }
+                catch (Exception ex) { MessageBox.Show("Cập nhật xe lỗi !! " + ex.Message); }
             }
         }
 
@@ -264,7 +265,7 @@ namespace GarageManagement
                         MessageBox.Show("xóa xe lỗi !!");
                     }
                 }
-                catch { }
+                catch (Exception ex){ MessageBox.Show("xóa xe lỗi !! " + ex.Message); }
         } }
 
         private void btnThemXe_Click(object sender, EventArgs e)
@@ -287,7 +288,7 @@ namespace GarageManagement
                         MessageBox.Show("Thêm xe lỗi !!");
                     }
                 }
-                catch { }
+                catch(Exception ex) { MessageBox.Show("Thêm xe lỗi !!  "+ex.Message); }
             }
         }
 
@@ -313,8 +314,8 @@ namespace GarageManagement
                         MessageBox.Show("Thêm vào kho lỗi !!");
                     }
                 }
-                catch { }     
-                }
+                catch (Exception ex) { MessageBox.Show("Thêm vào kho lỗi !! " + ex.Message); }
+            }
         } 
 
         private void btnXemKho_Click(object sender, EventArgs e)
@@ -341,7 +342,7 @@ namespace GarageManagement
                         MessageBox.Show("Xóa vật liệu kho kho lỗi !!");
                     }
                 }
-                catch { }
+                catch (Exception ex) { MessageBox.Show(" Xóa vật liệu trong kho lỗi !! " + ex.Message); }
             }
         }
 
@@ -371,8 +372,8 @@ namespace GarageManagement
                         MessageBox.Show("Cập nhật kho lỗi !!");
                     }
                 }
-                catch { }
-        } }
+                catch (Exception ex) { MessageBox.Show("Cập nhật vật liệu kho lỗi !! " + ex.Message); }
+            } }
 
         private void btnXemPSC_Click(object sender, EventArgs e)
         {
@@ -403,8 +404,8 @@ namespace GarageManagement
                         MessageBox.Show("Cập nhật phiếu lỗi !!");
                     }
                 }
-                catch { }
-             }
+                catch (Exception ex) { MessageBox.Show("Cập nhật phiếu lỗi !! " + ex.Message); }
+            }
         }
 
         private void btnXoaPSC_Click(object sender, EventArgs e)
@@ -423,7 +424,7 @@ namespace GarageManagement
                         MessageBox.Show("xóa phiếu lỗi !!");
                     }
                 }
-                catch { }
+                catch (Exception ex) { MessageBox.Show("Xóa phiếu lỗi !! " + ex.Message); }
             }
         }
 
@@ -451,8 +452,8 @@ namespace GarageManagement
                         MessageBox.Show("Thêm vào phiếu lỗi !!");
                     }
                 }
-                catch { }
-                }
+                catch (Exception ex) { MessageBox.Show("Thêm vào phiếu lỗi !! " + ex.Message); }
+            }
         }
 
 
