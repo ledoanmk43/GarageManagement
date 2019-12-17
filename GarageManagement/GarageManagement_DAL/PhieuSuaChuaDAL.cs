@@ -40,16 +40,16 @@ namespace GarageManagement.GarageManagement_DAL
 
         public bool InsertPhieuSuaChua(int idpsc, int carnumber, int iditem, string detail, DateTime? createddate, float dongia, float tiencong, float totalprice)
         {
-            string query = string.Format("insert ( idpsc , carnumber , iditem , detail , createddate , dongia , tiencong , totalprice");
-            query += string.Format("values ({0} , {1} , {2} , '{3}' , '{4}' , {5}, {6}, {7}) ", idpsc, carnumber, iditem, detail, createddate, dongia, tiencong, totalprice);
+            string query = string.Format("insert dbo.phieusuachua ( idpsc , carnumber , iditem , detail , createddate , dongia , tiencong , totalprice ) ");
+            query += string.Format("values ({0} , {1} , {2} , N'{3}' , '{4}' , {5}, {6}, {7}) ", idpsc, carnumber, iditem, detail, createddate, dongia, tiencong, totalprice);
             int result = DataProvider.Instance.ExecuteNonQuery(query);
             return result > 0;
         }
 
         public bool UpdatePhieuSuaChua(int idpsc, int carnumber, int iditem, string detail, DateTime? createddate, float dongia, float tiencong, float totalprice)
         {
-            string query = string.Format("update dbo.phieusuachua");
-            query += string.Format(" (carnumber = {0} , iditem = {1} , detail = '{2}' , createddate = '{3}' , dongia = {4} , tiencong = {5}, totalprice ={6} where idpsc = {7}) ",  carnumber, iditem, detail, createddate, dongia, tiencong, totalprice, idpsc);
+            string query = string.Format("update dbo.phieusuachua set");
+            query += string.Format(" carnumber = {0} , iditem = {1} , detail = N'{2}' , createddate = '{3}' , dongia = {4} , tiencong = {5}, totalprice ={6} where idpsc = {7} ",  carnumber, iditem, detail, createddate, dongia, tiencong, totalprice, idpsc);
             int result = DataProvider.Instance.ExecuteNonQuery(query);
             return result > 0;
         }

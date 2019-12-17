@@ -42,12 +42,17 @@ namespace GarageManagement
             AddBindingXe();
             LoadListPSC();
             AddBindingPSC();
+            LoadDateTimePicker();
         }
         void LoadListKhachHang()
         {
             khachhangList.DataSource = KhachHangDAL.Instance.GetListKhachHang();
         }
-
+        void LoadDateTimePicker()
+        {
+            DateTime today = DateTime.Now;
+            dtpNgayGui.Value = new DateTime(today.Year, today.Month, today.Day);
+        }
         void LoadKho()
         {
             khoList.DataSource = KhoGaraDAL.Instance.GetListKho();
@@ -61,15 +66,9 @@ namespace GarageManagement
         void LoadListPSC()
         {          
             pscList.DataSource = PhieuSuaChuaDAL.Instance.GetListPhieuSuaChua();
-            LoadTotalPricePSC((float)Convert.ToDouble(txtTotalPricePSC.Text));
         }
 
-        void LoadTotalPricePSC(float totalPricePSC)
-        {
-            CultureInfo culture = new CultureInfo("vi-VN");
-            Thread.CurrentThread.CurrentCulture = culture;
-            txtTotalPricePSC.Text = totalPricePSC.ToString("c", culture);
-        }
+
         List<KhachHangDTO> SearchKhachHang(string text)
         {
             List<KhachHangDTO> list = KhachHangDAL.Instance.SearchKhachHangByNameAndID(text);
@@ -199,6 +198,7 @@ namespace GarageManagement
             {
                 MessageBox.Show("Cập nhật xe thành công");
                 LoadListXe();
+                LoadListPSC();
             }
             else
             {
@@ -213,6 +213,7 @@ namespace GarageManagement
             {
                 MessageBox.Show("Xóa xe thành công");
                 LoadListXe();
+                LoadListPSC();
             }
             else
             {
@@ -229,6 +230,7 @@ namespace GarageManagement
             {
                 MessageBox.Show("Thêm xe thành công");
                 LoadListXe();
+                LoadListPSC();
             }
             else
             {
@@ -247,6 +249,7 @@ namespace GarageManagement
             {
                 MessageBox.Show("Thêm vào kho thành công");
                 LoadKho();
+                LoadListPSC();
             }
             else
             {
@@ -267,6 +270,7 @@ namespace GarageManagement
             {
                 MessageBox.Show("Xóa vật liệu kho thành công");
                 LoadKho();
+                LoadListPSC();
             }
             else
             {
@@ -289,6 +293,7 @@ namespace GarageManagement
             {
                 MessageBox.Show("Cập nhật kho thành công");
                 LoadKho();
+                LoadListPSC();
             }
             else
             {
@@ -356,6 +361,7 @@ namespace GarageManagement
                 MessageBox.Show("Thêm vào phiếu lỗi !!");
             }
         }
+
 
         #endregion
 

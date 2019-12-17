@@ -30,6 +30,7 @@
         {
             this.tbKhachHang = new System.Windows.Forms.TabControl();
             this.tpKhachHang = new System.Windows.Forms.TabPage();
+            this.dtpNgayGui = new System.Windows.Forms.DateTimePicker();
             this.txtTienNo = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -100,7 +101,6 @@
             this.label28 = new System.Windows.Forms.Label();
             this.txtTienCongPSC = new System.Windows.Forms.TextBox();
             this.label27 = new System.Windows.Forms.Label();
-            this.txtNoiDungPSC = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
@@ -121,7 +121,7 @@
             this.tpPhieuThuTien = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.dtpNgayGui = new System.Windows.Forms.DateTimePicker();
+            this.txtNoiDungPSC = new System.Windows.Forms.TextBox();
             this.tbKhachHang.SuspendLayout();
             this.tpKhachHang.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKhachHang)).BeginInit();
@@ -177,6 +177,15 @@
             this.tpKhachHang.TabIndex = 1;
             this.tpKhachHang.Text = "Hồ Sơ Khách Hàng";
             this.tpKhachHang.UseVisualStyleBackColor = true;
+            // 
+            // dtpNgayGui
+            // 
+            this.dtpNgayGui.CustomFormat = "";
+            this.dtpNgayGui.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpNgayGui.Location = new System.Drawing.Point(746, 351);
+            this.dtpNgayGui.Name = "dtpNgayGui";
+            this.dtpNgayGui.Size = new System.Drawing.Size(303, 27);
+            this.dtpNgayGui.TabIndex = 106;
             // 
             // txtTienNo
             // 
@@ -830,6 +839,7 @@
             // 
             // tpPhieuSuaChua
             // 
+            this.tpPhieuSuaChua.Controls.Add(this.txtNoiDungPSC);
             this.tpPhieuSuaChua.Controls.Add(this.label30);
             this.tpPhieuSuaChua.Controls.Add(this.txtTotalPricePSC);
             this.tpPhieuSuaChua.Controls.Add(this.label29);
@@ -840,7 +850,6 @@
             this.tpPhieuSuaChua.Controls.Add(this.label28);
             this.tpPhieuSuaChua.Controls.Add(this.txtTienCongPSC);
             this.tpPhieuSuaChua.Controls.Add(this.label27);
-            this.tpPhieuSuaChua.Controls.Add(this.txtNoiDungPSC);
             this.tpPhieuSuaChua.Controls.Add(this.label20);
             this.tpPhieuSuaChua.Controls.Add(this.label21);
             this.tpPhieuSuaChua.Controls.Add(this.label22);
@@ -964,14 +973,6 @@
             this.label27.Size = new System.Drawing.Size(102, 24);
             this.label27.TabIndex = 129;
             this.label27.Text = "Nội dung:";
-            // 
-            // txtNoiDungPSC
-            // 
-            this.txtNoiDungPSC.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNoiDungPSC.Location = new System.Drawing.Point(805, 291);
-            this.txtNoiDungPSC.Name = "txtNoiDungPSC";
-            this.txtNoiDungPSC.Size = new System.Drawing.Size(303, 27);
-            this.txtNoiDungPSC.TabIndex = 128;
             // 
             // label20
             // 
@@ -1182,13 +1183,13 @@
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // dtpNgayGui
+            // txtNoiDungPSC
             // 
-            this.dtpNgayGui.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpNgayGui.Location = new System.Drawing.Point(746, 351);
-            this.dtpNgayGui.Name = "dtpNgayGui";
-            this.dtpNgayGui.Size = new System.Drawing.Size(303, 27);
-            this.dtpNgayGui.TabIndex = 106;
+            this.txtNoiDungPSC.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNoiDungPSC.Location = new System.Drawing.Point(805, 294);
+            this.txtNoiDungPSC.Name = "txtNoiDungPSC";
+            this.txtNoiDungPSC.Size = new System.Drawing.Size(303, 27);
+            this.txtNoiDungPSC.TabIndex = 139;
             // 
             // frmDanhMuc
             // 
@@ -1293,7 +1294,6 @@
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.TextBox txtTienCongPSC;
         private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.TextBox txtNoiDungPSC;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label22;
@@ -1314,5 +1314,6 @@
         private System.Windows.Forms.TextBox txtTotalPricePSC;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.DateTimePicker dtpNgayGui;
+        private System.Windows.Forms.TextBox txtNoiDungPSC;
     }
 }

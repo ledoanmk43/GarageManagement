@@ -44,7 +44,7 @@ namespace GarageManagement_DAL
                     SqlDataAdapter adapter = new SqlDataAdapter(command);
                     adapter.Fill(data);
                     connection.Close();
-
+                
             }
             return data;
         }
@@ -54,23 +54,23 @@ namespace GarageManagement_DAL
             int data = 0;
             using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
-                connection.Open();
-                SqlCommand command = new SqlCommand(query, connection);
-                if (parameter != null)
-                {
-                    string[] listParameter = query.Split(' ');
-                    int i = 0;
-                    foreach (string item in listParameter)
+                    connection.Open();
+                    SqlCommand command = new SqlCommand(query, connection);
+                    if (parameter != null)
                     {
-                        if (item.Contains('@'))
+                        string[] listParameter = query.Split(' ');
+                        int i = 0;
+                        foreach (string item in listParameter)
                         {
-                            command.Parameters.AddWithValue(item, parameter[i]);
-                            i++;
+                            if (item.Contains('@'))
+                            {
+                                command.Parameters.AddWithValue(item, parameter[i]);
+                                i++;
+                            }
                         }
                     }
-                }
-                data = command.ExecuteNonQuery();
-                connection.Close();
+                    data = command.ExecuteNonQuery();
+                    connection.Close(); 
             }
             return data;
         }
@@ -79,24 +79,24 @@ namespace GarageManagement_DAL
         {
             object data = 0;
             using (SqlConnection connection = new SqlConnection(ConnectionString))
-            {
-                connection.Open();
-                SqlCommand command = new SqlCommand(query, connection);
-                if (parameter != null)
-                {
-                    string[] listParameter = query.Split(' ');
-                    int i = 0;
-                    foreach (string item in listParameter)
+            {                
+                    connection.Open();
+                    SqlCommand command = new SqlCommand(query, connection);
+                    if (parameter != null)
                     {
-                        if (item.Contains('@'))
+                        string[] listParameter = query.Split(' ');
+                        int i = 0;
+                        foreach (string item in listParameter)
                         {
-                            command.Parameters.AddWithValue(item, parameter[i]);
-                            i++;
+                            if (item.Contains('@'))
+                            {
+                                command.Parameters.AddWithValue(item, parameter[i]);
+                                i++;
+                            }
                         }
                     }
-                }
-                data = command.ExecuteScalar();
-                connection.Close();
+                    data = command.ExecuteScalar();               
+                    connection.Close();
             }
             return data;
         }
