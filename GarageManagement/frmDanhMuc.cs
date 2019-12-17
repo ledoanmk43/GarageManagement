@@ -21,6 +21,7 @@ namespace GarageManagement
         BindingSource khoList = new BindingSource();
         BindingSource xeList = new BindingSource();
         BindingSource pscList = new BindingSource();
+        int parsedValue;
         public frmDanhMuc()
         {
             InitializeComponent();
@@ -68,7 +69,16 @@ namespace GarageManagement
             pscList.DataSource = PhieuSuaChuaDAL.Instance.GetListPhieuSuaChua();
         }
 
-
+        bool CheckIntValue(string id)
+        {
+            int parsedValue;
+            if (!int.TryParse(id, out parsedValue))
+            {
+                MessageBox.Show("Id sai số , xin vui lòng nhập lại !");
+                return false;
+            }
+            return true;
+        }
         List<KhachHangDTO> SearchKhachHang(string text)
         {
             List<KhachHangDTO> list = KhachHangDAL.Instance.SearchKhachHangByNameAndID(text);
@@ -122,56 +132,79 @@ namespace GarageManagement
 
         private void btnThemKhachHang_Click(object sender, EventArgs e)
         {
-            int id = Convert.ToInt32(txtIDKhachHang.Text);
-            string name = txtTenKhachHang.Text;
-            string DiaChi = txtDiaChi.Text;
-            int DienThoai = Convert.ToInt32(txtDienThoai.Text);
-            DateTime? Ngaygui = dtpNgayGui.Value;
-            float Tienno = (float)Convert.ToDouble(txtTienNo.Text);
-            if (KhachHangDAL.Instance.InsertKhachHang(id, name, DiaChi, DienThoai, Ngaygui, Tienno))
+            if (CheckIntValue(txtIDKhachHang.Text) == true)
             {
-                MessageBox.Show("Thêm Khách Hàng thành công");
-                LoadListKhachHang();
-                LoadListXe();
-            }
-            else
-            {
-                MessageBox.Show("Thêm Khách Hàng lỗi !!");
+                try
+                {
+                    int id = Convert.ToInt32(txtIDKhachHang.Text);
+                    string name = txtTenKhachHang.Text;
+                    string DiaChi = txtDiaChi.Text;
+                    int DienThoai = Convert.ToInt32(txtDienThoai.Text);
+                    DateTime? Ngaygui = dtpNgayGui.Value;
+                    float Tienno = (float)Convert.ToDouble(txtTienNo.Text);
+                    if (KhachHangDAL.Instance.InsertKhachHang(id, name, DiaChi, DienThoai, Ngaygui, Tienno))
+                    {
+                        MessageBox.Show("Thêm Khách Hàng thành công");
+                        LoadListKhachHang();
+                        LoadListXe();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Thêm Khách Hàng lỗi !!");
+                    }
+                }
+                catch { }
             }
         }
 
         private void btnXoaKhachHang_Click(object sender, EventArgs e)
         {
-            int id = Convert.ToInt32(txtIDKhachHang.Text);
-            if (KhachHangDAL.Instance.DeleteKhachHang(id))
+            if (CheckIntValue(txtIDKhachHang.Text) == true)
             {
-                MessageBox.Show("Xóa Khách Hàng thành công");
-                LoadListKhachHang();
-                LoadListXe();
-            }
-            else
-            {
-                MessageBox.Show("Xóa Khách Hàng lỗi !!");
-            }
-        }
+                try
+                {
+                    int id = Convert.ToInt32(txtIDKhachHang.Text);
+                    if (KhachHangDAL.Instance.DeleteKhachHang(id))
+                    {
+                        MessageBox.Show("Xóa Khách Hàng thành công");
+                        LoadListKhachHang();
+                        LoadListXe();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Xóa Khách Hàng lỗi !!");
+                    }
+
+                }
+                catch  { }
+            }   
+        }   
+
 
         private void btnSuaKhachHang_Click(object sender, EventArgs e)
         {
-            int id = Convert.ToInt32(txtIDKhachHang.Text);
-            string name = txtTenKhachHang.Text;
-            string DiaChi = txtDiaChi.Text;
-            int DienThoai = Convert.ToInt32(txtDienThoai.Text);
-            DateTime? Ngaygui = dtpNgayGui.Value;
-            float Tienno = (float)Convert.ToDouble(txtTienNo.Text);
-            if (KhachHangDAL.Instance.UpdateKhachHang(name, DiaChi, DienThoai, Ngaygui, Tienno, id))
+            if (CheckIntValue(txtIDKhachHang.Text) == true)
             {
-                MessageBox.Show("Sửa Khách Hàng thành công");
-                LoadListKhachHang();
-                LoadListXe();
-            }
-            else
-            {
-                MessageBox.Show("Sửa Khách Hàng lỗi !!");
+                try
+                {
+                    int id = Convert.ToInt32(txtIDKhachHang.Text);
+                    string name = txtTenKhachHang.Text;
+                    string DiaChi = txtDiaChi.Text;
+                    int DienThoai = Convert.ToInt32(txtDienThoai.Text);
+                    DateTime? Ngaygui = dtpNgayGui.Value;
+                    float Tienno = (float)Convert.ToDouble(txtTienNo.Text);
+                    if (KhachHangDAL.Instance.UpdateKhachHang(name, DiaChi, DienThoai, Ngaygui, Tienno, id))
+                    {
+                        MessageBox.Show("Sửa Khách Hàng thành công");
+                        LoadListKhachHang();
+                        LoadListXe();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Sửa Khách Hàng lỗi !!");
+                    }
+                }
+                catch  {  }
             }
         }
         private void btnXemKhachHang_Click_1(object sender, EventArgs e)
@@ -192,70 +225,97 @@ namespace GarageManagement
 
         private void btxSuaXe_Click(object sender, EventArgs e)
         {
-            int maxe = Convert.ToInt32(txtMaXe.Text);
-            string hieuxe = txtHieuXe.Text;
-            if (XeDAL.Instance.UpdateXe(hieuxe, maxe))
+            if (CheckIntValue(txtMaXe.Text) == true)
             {
-                MessageBox.Show("Cập nhật xe thành công");
-                LoadListXe();
-                LoadListPSC();
-            }
-            else
-            {
-                MessageBox.Show("Cập nhật xe lỗi !!");
+                try
+                {
+                    int maxe = Convert.ToInt32(txtMaXe.Text);
+                    string hieuxe = txtHieuXe.Text;
+                    if (XeDAL.Instance.UpdateXe(hieuxe, maxe))
+                    {
+                        MessageBox.Show("Cập nhật xe thành công");
+                        LoadListXe();
+                        LoadListPSC();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Cập nhật xe lỗi !!");
+                    }
+                }
+                catch { }
             }
         }
 
         private void btnXoaXe_Click(object sender, EventArgs e)
         {
-            int maxe = Convert.ToInt32(txtMaXe.Text);           
-            if (XeDAL.Instance.DeleteXe(maxe))
+            if (CheckIntValue(txtMaXe.Text) == true)
             {
-                MessageBox.Show("Xóa xe thành công");
-                LoadListXe();
-                LoadListPSC();
-            }
-            else
-            {
-                MessageBox.Show("xóa xe lỗi !!");
-            }
-        }
+                try
+                {
+                    int maxe = Convert.ToInt32(txtMaXe.Text);
+                    if (XeDAL.Instance.DeleteXe(maxe))
+                    {
+                        MessageBox.Show("Xóa xe thành công");
+                        LoadListXe();
+                        LoadListPSC();
+                    }
+                    else
+                    {
+                        MessageBox.Show("xóa xe lỗi !!");
+                    }
+                }
+                catch { }
+        } }
 
         private void btnThemXe_Click(object sender, EventArgs e)
         {
-            int maxe = Convert.ToInt32(txtMaXe.Text);
-            string hieuxe = txtHieuXe.Text;
-            int idkh = Convert.ToInt32(txtIDKH_XE.Text);
-            if (XeDAL.Instance.InsertXe(maxe, hieuxe,idkh))
+            if (CheckIntValue(txtMaXe.Text) == true)
             {
-                MessageBox.Show("Thêm xe thành công");
-                LoadListXe();
-                LoadListPSC();
-            }
-            else
-            {
-                MessageBox.Show("Thêm xe lỗi !!");
+                try
+                {
+                    int maxe = Convert.ToInt32(txtMaXe.Text);
+                    string hieuxe = txtHieuXe.Text;
+                    int idkh = Convert.ToInt32(txtIDKH_XE.Text);
+                    if (XeDAL.Instance.InsertXe(maxe, hieuxe, idkh))
+                    {
+                        MessageBox.Show("Thêm xe thành công");
+                        LoadListXe();
+                        LoadListPSC();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Thêm xe lỗi !!");
+                    }
+                }
+                catch { }
             }
         }
 
         private void btnThemKho_Click_1(object sender, EventArgs e)
         {
-            int iditem = Convert.ToInt32(txtMaSoVatLieu.Text);
-            string item = txtVatLieu.Text;
-            int slitem = Convert.ToInt32(nmSoLuongVatLieu.Text);
-            DateTime? importteddate = dtpNgayNhap.Value;
-            DateTime? exportteddate = dtpNgayXuat.Value;
-            if (KhoGaraDAL.Instance.InsertKho(iditem, item , slitem, importteddate, exportteddate))
+            if (CheckIntValue(txtMaSoVatLieu.Text) == true)
             {
-                MessageBox.Show("Thêm vào kho thành công");
-                LoadKho();
-                LoadListPSC();
-            }
-            else
-            {
-                MessageBox.Show("Thêm vào kho lỗi !!");
-            }
-        }
+                try
+                {
+                    int iditem = Convert.ToInt32(txtMaSoVatLieu.Text);
+                    string item = txtVatLieu.Text;
+                    int slitem = Convert.ToInt32(nmSoLuongVatLieu.Text);
+                    DateTime? importteddate = dtpNgayNhap.Value;
+                    DateTime? exportteddate = dtpNgayXuat.Value;
+                    if (KhoGaraDAL.Instance.InsertKho(iditem, item, slitem, importteddate, exportteddate))
+                    {
+                        MessageBox.Show("Thêm vào kho thành công");
+                        LoadKho();
+                        LoadListPSC();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Thêm vào kho lỗi !!");
+                    }
+                }
+                catch { }     
+                }
+        } 
 
         private void btnXemKho_Click(object sender, EventArgs e)
         {
@@ -264,17 +324,24 @@ namespace GarageManagement
 
         private void btnXoaKho_Click(object sender, EventArgs e)
         {
-            int iditem = Convert.ToInt32(txtMaSoVatLieu.Text);
-         
-            if (KhoGaraDAL.Instance.DeleteKho(iditem))
+            if (CheckIntValue(txtMaSoVatLieu.Text) == true)
             {
-                MessageBox.Show("Xóa vật liệu kho thành công");
-                LoadKho();
-                LoadListPSC();
-            }
-            else
-            {
-                MessageBox.Show("Xóa vật liệu kho kho lỗi !!");
+                try
+                {
+                    int iditem = Convert.ToInt32(txtMaSoVatLieu.Text);
+
+                    if (KhoGaraDAL.Instance.DeleteKho(iditem))
+                    {
+                        MessageBox.Show("Xóa vật liệu kho thành công");
+                        LoadKho();
+                        LoadListPSC();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Xóa vật liệu kho kho lỗi !!");
+                    }
+                }
+                catch { }
             }
         }
 
@@ -284,22 +351,28 @@ namespace GarageManagement
         }
         private void btnSuaKho_Click(object sender, EventArgs e)
         {
-            int iditem = Convert.ToInt32(txtMaSoVatLieu.Text);
-            string item = txtVatLieu.Text;
-            int slitem = Convert.ToInt32(nmSoLuongVatLieu.Text);
-            DateTime? importteddate = dtpNgayNhap.Value;
-            DateTime? exportteddate = dtpNgayXuat.Value;
-            if (KhoGaraDAL.Instance.UpdateKho(iditem, item, slitem, importteddate, exportteddate))
+            if (CheckIntValue(txtMaSoVatLieu.Text) == true)
             {
-                MessageBox.Show("Cập nhật kho thành công");
-                LoadKho();
-                LoadListPSC();
-            }
-            else
-            {
-                MessageBox.Show("Cập nhật kho lỗi !!");
-            }
-        }
+                try
+                {
+                    int iditem = Convert.ToInt32(txtMaSoVatLieu.Text);
+                    string item = txtVatLieu.Text;
+                    int slitem = Convert.ToInt32(nmSoLuongVatLieu.Text);
+                    DateTime? importteddate = dtpNgayNhap.Value;
+                    DateTime? exportteddate = dtpNgayXuat.Value;
+                    if (KhoGaraDAL.Instance.UpdateKho(iditem, item, slitem, importteddate, exportteddate))
+                    {
+                        MessageBox.Show("Cập nhật kho thành công");
+                        LoadKho();
+                        LoadListPSC();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Cập nhật kho lỗi !!");
+                    }
+                }
+                catch { }
+        } }
 
         private void btnXemPSC_Click(object sender, EventArgs e)
         {
@@ -308,58 +381,78 @@ namespace GarageManagement
 
         private void btnSuaPSC_Click(object sender, EventArgs e)
         {
-            int idpsc = Convert.ToInt32(txtIDPSC.Text);
-            int carnumber = Convert.ToInt32(txtMaXe_PSC.Text);
-            int iditem = Convert.ToInt32(txtMaVatLieu_PSC.Text);
-            string detail = txtNoiDungPSC.Text;
-            DateTime? createddate = dtpNgayTaoPSC.Value;
-            float dongia = (float)Convert.ToDouble(txtDonGiaPSC.Text);
-            float tiencong = (float)Convert.ToDouble(txtTienCongPSC.Text);
-            float totalprice = dongia + tiencong;
-            if (PhieuSuaChuaDAL.Instance.UpdatePhieuSuaChua(idpsc, carnumber, iditem, detail, createddate, dongia, tiencong, totalprice))
+            if (CheckIntValue(txtIDPSC.Text)  && CheckIntValue(txtMaXe_PSC.Text)  && CheckIntValue(txtMaVatLieu_PSC.Text) == true)
             {
-                MessageBox.Show("Cập nhật phiếu sửa chữa thành công");
-                LoadListPSC();
-            }
-            else
-            {
-                MessageBox.Show("Cập nhật phiếu lỗi !!");
-            }
+                try
+                {
+                    int idpsc = Convert.ToInt32(txtIDPSC.Text);
+                    int carnumber = Convert.ToInt32(txtMaXe_PSC.Text);
+                    int iditem = Convert.ToInt32(txtMaVatLieu_PSC.Text);
+                    string detail = txtNoiDungPSC.Text;
+                    DateTime? createddate = dtpNgayTaoPSC.Value;
+                    float dongia = (float)Convert.ToDouble(txtDonGiaPSC.Text);
+                    float tiencong = (float)Convert.ToDouble(txtTienCongPSC.Text);
+                    float totalprice = dongia + tiencong;
+                    if (PhieuSuaChuaDAL.Instance.UpdatePhieuSuaChua(idpsc, carnumber, iditem, detail, createddate, dongia, tiencong, totalprice))
+                    {
+                        MessageBox.Show("Cập nhật phiếu sửa chữa thành công");
+                        LoadListPSC();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Cập nhật phiếu lỗi !!");
+                    }
+                }
+                catch { }
+             }
         }
 
         private void btnXoaPSC_Click(object sender, EventArgs e)
         {
-            int idpsc = Convert.ToInt32(txtIDPSC.Text);
-            if (PhieuSuaChuaDAL.Instance.DeletePhieuSuaChua(idpsc)) 
-            {
-                MessageBox.Show("xóa phiếu sửa chữa thành công");
-                LoadListPSC();
-            }
-            else
-            {
-                MessageBox.Show("xóa phiếu lỗi !!");
+            if (CheckIntValue(txtIDPSC.Text))
+            {try
+                {
+                    int idpsc = Convert.ToInt32(txtIDPSC.Text);
+                    if (PhieuSuaChuaDAL.Instance.DeletePhieuSuaChua(idpsc))
+                    {
+                        MessageBox.Show("xóa phiếu sửa chữa thành công");
+                        LoadListPSC();
+                    }
+                    else
+                    {
+                        MessageBox.Show("xóa phiếu lỗi !!");
+                    }
+                }
+                catch { }
             }
         }
 
         private void btnThemPSC_Click(object sender, EventArgs e)
         {
-            int idpsc = Convert.ToInt32(txtIDPSC.Text);
-            int carnumber = Convert.ToInt32(txtMaXe_PSC.Text);
-            int iditem = Convert.ToInt32(txtMaVatLieu_PSC.Text);
-            string detail = txtNoiDungPSC.Text;
-            DateTime? createddate = dtpNgayTaoPSC.Value;
-            float dongia = (float)Convert.ToDouble(txtDonGiaPSC.Text);
-            float tiencong = (float)Convert.ToDouble(txtTienCongPSC.Text);
-            float totalprice = dongia + tiencong;
-            if (PhieuSuaChuaDAL.Instance.InsertPhieuSuaChua(idpsc, carnumber, iditem,  detail, createddate,  dongia, tiencong, totalprice))
+            if (CheckIntValue(txtIDPSC.Text) && CheckIntValue(txtMaXe_PSC.Text) && CheckIntValue(txtMaVatLieu_PSC.Text) == true)
             {
-                MessageBox.Show("Thêm vào phiếu sửa chữa thành công");
-                LoadListPSC();
-            }
-            else
-            {
-                MessageBox.Show("Thêm vào phiếu lỗi !!");
-            }
+                try
+                {
+                    int idpsc = Convert.ToInt32(txtIDPSC.Text);
+                    int carnumber = Convert.ToInt32(txtMaXe_PSC.Text);
+                    int iditem = Convert.ToInt32(txtMaVatLieu_PSC.Text);
+                    string detail = txtNoiDungPSC.Text;
+                    DateTime? createddate = dtpNgayTaoPSC.Value;
+                    float dongia = (float)Convert.ToDouble(txtDonGiaPSC.Text);
+                    float tiencong = (float)Convert.ToDouble(txtTienCongPSC.Text);
+                    float totalprice = dongia + tiencong;
+                    if (PhieuSuaChuaDAL.Instance.InsertPhieuSuaChua(idpsc, carnumber, iditem, detail, createddate, dongia, tiencong, totalprice))
+                    {
+                        MessageBox.Show("Thêm vào phiếu sửa chữa thành công");
+                        LoadListPSC();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Thêm vào phiếu lỗi !!");
+                    }
+                }
+                catch { }
+                }
         }
 
 
