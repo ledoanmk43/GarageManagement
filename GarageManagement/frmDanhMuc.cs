@@ -1,4 +1,5 @@
 ﻿using GarageManagement.GarageManagement_DAL;
+using GarageManagement.GarageManagement_DTO;
 using GarageManagement_DAL;
 using GarageManagement_DTO;
 using System;
@@ -13,6 +14,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace GarageManagement
 {
     public partial class frmDanhMuc : Form
@@ -21,7 +23,6 @@ namespace GarageManagement
         BindingSource khoList = new BindingSource();
         BindingSource xeList = new BindingSource();
         BindingSource pscList = new BindingSource();
-        int parsedValue;
         public frmDanhMuc()
         {
             InitializeComponent();
@@ -42,21 +43,19 @@ namespace GarageManagement
             LoadListXe();
             AddBindingXe();
             LoadListPSC();
-            AddBindingPSC();
-            LoadDateTimePicker();
+            AddBindingPSC();           
+            LoadComboboxHieuXe(cbHieuXe);
+            LoadComboboxVatLieu(cbVatLieu);
         }
         void LoadListKhachHang()
         {
             khachhangList.DataSource = KhachHangDAL.Instance.GetListKhachHang();
         }
-        void LoadDateTimePicker()
-        {
-            DateTime today = DateTime.Now;
-            dtpNgayGui.Value = new DateTime(today.Year, today.Month, today.Day);
-        }
+    
         void LoadKho()
         {
-            khoList.DataSource = KhoGaraDAL.Instance.GetListKho();
+            khoList.DataSource = VatLieuDAL.Instance.GetListKho();
+
         }
 
         void LoadListXe()
@@ -67,6 +66,18 @@ namespace GarageManagement
         void LoadListPSC()
         {          
             pscList.DataSource = PhieuSuaChuaDAL.Instance.GetListPhieuSuaChua();
+        }
+
+        void LoadComboboxHieuXe(ComboBox cb)
+        {
+            cb.DataSource = XeDAL.Instance.GetListXe();
+            cb.DisplayMember = "carbrand";
+        }
+
+        void LoadComboboxVatLieu(ComboBox cb)
+        {
+            cb.DataSource = VatLieuDAL.Instance.GetListKho();
+            cb.DisplayMember = "item";
         }
 
         bool CheckIntValue(string id)
@@ -116,14 +127,13 @@ namespace GarageManagement
         void AddBindingPSC()
         {
             txtIDPSC.DataBindings.Add(new Binding("Text", dgvPSC.DataSource, "idpsc", true, DataSourceUpdateMode.Never));
-            txtMaXe_PSC.DataBindings.Add(new Binding("Text", dgvPSC.DataSource, "carnumber", true, DataSourceUpdateMode.Never));
-            txtMaVatLieu_PSC.DataBindings.Add(new Binding("Text", dgvPSC.DataSource, "iditem", true, DataSourceUpdateMode.Never));
             txtNoiDungPSC.DataBindings.Add(new Binding("Text", dgvPSC.DataSource, "detail", true, DataSourceUpdateMode.Never));
             dtpNgayTaoPSC.DataBindings.Add(new Binding("Value", dgvPSC.DataSource, "createddate", true, DataSourceUpdateMode.Never));
             txtDonGiaPSC.DataBindings.Add(new Binding("Text", dgvPSC.DataSource, "dongia", true, DataSourceUpdateMode.Never));
             txtTienCongPSC.DataBindings.Add(new Binding("Text", dgvPSC.DataSource, "tiencong", true, DataSourceUpdateMode.Never));
             txtTotalPricePSC.DataBindings.Add(new Binding("Text", dgvPSC.DataSource, "totalprice", true, DataSourceUpdateMode.Never));
-            
+          
+
         }
         #endregion
         
@@ -236,7 +246,7 @@ namespace GarageManagement
                     {
                         MessageBox.Show("Cập nhật xe thành công");
                         LoadListXe();
-                        LoadListPSC();
+                        tpPhieuSuaChua.Refresh();
                     }
                     else
                     {
@@ -258,7 +268,7 @@ namespace GarageManagement
                     {
                         MessageBox.Show("Xóa xe thành công");
                         LoadListXe();
-                        LoadListPSC();
+                        tpPhieuSuaChua.Refresh();
                     }
                     else
                     {
@@ -281,7 +291,7 @@ namespace GarageManagement
                     {
                         MessageBox.Show("Thêm xe thành công");
                         LoadListXe();
-                        LoadListPSC();
+                        tpPhieuSuaChua.Refresh();
                     }
                     else
                     {
@@ -303,11 +313,13 @@ namespace GarageManagement
                     int slitem = Convert.ToInt32(nmSoLuongVatLieu.Text);
                     DateTime? importteddate = dtpNgayNhap.Value;
                     DateTime? exportteddate = dtpNgayXuat.Value;
-                    if (KhoGaraDAL.Instance.InsertKho(iditem, item, slitem, importteddate, exportteddate))
+                    if (VatLieuDAL.Instance.InsertVatLieu(iditem, item, slitem, importteddate, exportteddate))
                     {
                         MessageBox.Show("Thêm vào kho thành công");
                         LoadKho();
-                        LoadListPSC();
+                        tpPhieuSuaChua.Refresh();
+
+
                     }
                     else
                     {
@@ -331,11 +343,11 @@ namespace GarageManagement
                 {
                     int iditem = Convert.ToInt32(txtMaSoVatLieu.Text);
 
-                    if (KhoGaraDAL.Instance.DeleteKho(iditem))
+                    if (VatLieuDAL.Instance.DeleteVatLieu(iditem))
                     {
                         MessageBox.Show("Xóa vật liệu kho thành công");
                         LoadKho();
-                        LoadListPSC();
+                        tpPhieuSuaChua.Refresh();
                     }
                     else
                     {
@@ -348,7 +360,7 @@ namespace GarageManagement
 
         private void btnTimKho_Click(object sender, EventArgs e)
         {
-            khoList.DataSource = KhoGaraDAL.Instance.SearchKhoByNameAndID(txtTimKho.Text);
+            khoList.DataSource = VatLieuDAL.Instance.SearchVatLieuByNameAndID(txtTimKho.Text);
         }
         private void btnSuaKho_Click(object sender, EventArgs e)
         {
@@ -361,11 +373,11 @@ namespace GarageManagement
                     int slitem = Convert.ToInt32(nmSoLuongVatLieu.Text);
                     DateTime? importteddate = dtpNgayNhap.Value;
                     DateTime? exportteddate = dtpNgayXuat.Value;
-                    if (KhoGaraDAL.Instance.UpdateKho(iditem, item, slitem, importteddate, exportteddate))
+                    if (VatLieuDAL.Instance.UpdateVatLieu(iditem, item, slitem, importteddate, exportteddate))
                     {
                         MessageBox.Show("Cập nhật kho thành công");
                         LoadKho();
-                        LoadListPSC();
+                        
                     }
                     else
                     {
@@ -382,13 +394,13 @@ namespace GarageManagement
 
         private void btnSuaPSC_Click(object sender, EventArgs e)
         {
-            if (CheckIntValue(txtIDPSC.Text)  && CheckIntValue(txtMaXe_PSC.Text)  && CheckIntValue(txtMaVatLieu_PSC.Text) == true)
+            if (CheckIntValue(txtIDPSC.Text) == true)
             {
                 try
                 {
                     int idpsc = Convert.ToInt32(txtIDPSC.Text);
-                    int carnumber = Convert.ToInt32(txtMaXe_PSC.Text);
-                    int iditem = Convert.ToInt32(txtMaVatLieu_PSC.Text);
+                    int carnumber = (cbHieuXe.SelectedItem as XeDTO).Carnumber;
+                    int iditem = (cbVatLieu.SelectedItem as VatLieuDTO).Iditem;
                     string detail = txtNoiDungPSC.Text;
                     DateTime? createddate = dtpNgayTaoPSC.Value;
                     float dongia = (float)Convert.ToDouble(txtDonGiaPSC.Text);
@@ -430,13 +442,13 @@ namespace GarageManagement
 
         private void btnThemPSC_Click(object sender, EventArgs e)
         {
-            if (CheckIntValue(txtIDPSC.Text) && CheckIntValue(txtMaXe_PSC.Text) && CheckIntValue(txtMaVatLieu_PSC.Text) == true)
+            if (CheckIntValue(txtIDPSC.Text) )
             {
                 try
                 {
                     int idpsc = Convert.ToInt32(txtIDPSC.Text);
-                    int carnumber = Convert.ToInt32(txtMaXe_PSC.Text);
-                    int iditem = Convert.ToInt32(txtMaVatLieu_PSC.Text);
+                    int carnumber = (cbHieuXe.SelectedItem as XeDTO).Carnumber;
+                    int iditem = (cbVatLieu.SelectedItem as VatLieuDTO).Iditem;
                     string detail = txtNoiDungPSC.Text;
                     DateTime? createddate = dtpNgayTaoPSC.Value;
                     float dongia = (float)Convert.ToDouble(txtDonGiaPSC.Text);
@@ -454,6 +466,51 @@ namespace GarageManagement
                 }
                 catch (Exception ex) { MessageBox.Show("Thêm vào phiếu lỗi !! " + ex.Message); }
             }
+        }
+
+
+        private void txtIDPSC_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dgvPSC.SelectedCells.Count > 0)
+                {
+                    int carnumber = (int)dgvPSC.SelectedCells[0].OwningRow.Cells["Carnumber"].Value;
+                    int iditem = (int)dgvPSC.SelectedCells[0].OwningRow.Cells["iditem"].Value;
+
+                    XeDTO xe = XeDAL.Instance.GetListXeById(carnumber);
+                    VatLieuDTO kho = VatLieuDAL.Instance.GetListKhoById(iditem);
+
+                    cbHieuXe.SelectedItem = xe;
+                    cbVatLieu.SelectedItem = kho;
+
+                    int indexcar = -1 ;
+                    int indexkho = -1;
+                    int i1 = 0;
+                    int i2 = 0;
+                    foreach (XeDTO item in cbHieuXe.Items)
+                    {
+                        if (item.Carnumber == xe.Carnumber)
+                        {
+                            indexcar = i1;
+                            break;
+                        }
+                        i1++;
+                    }
+                    foreach (VatLieuDTO item in cbVatLieu.Items)
+                    {
+                        if(item.Iditem == kho.Iditem)
+                        {
+                            indexkho = i2;
+                            break;
+                        }
+                        i2++;
+                    }
+                    cbHieuXe.SelectedIndex = indexcar;
+                    cbVatLieu.SelectedIndex = indexkho;
+                }
+            }
+            catch { }
         }
 
 

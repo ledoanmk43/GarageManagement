@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace GarageManagement.GarageManagement_DTO
 {
-    class KhoGaraDTO
+    class VatLieuDTO
     {
         private int iditem;
         private string item;
@@ -15,7 +15,7 @@ namespace GarageManagement.GarageManagement_DTO
         private DateTime? importeddate;
         private DateTime? exporteddate;
 
-        public KhoGaraDTO( int iditem , string item , int slitem , DateTime? iporteddate ,DateTime? exporteddate)
+        public VatLieuDTO( int iditem , string item , int slitem , DateTime? iporteddate ,DateTime? exporteddate)
         {
 
             this.Iditem = iditem;
@@ -25,7 +25,7 @@ namespace GarageManagement.GarageManagement_DTO
             this.Exporteddate = exporteddate;
         }
 
-        public KhoGaraDTO(DataRow row)
+        public VatLieuDTO(DataRow row)
         {
             this.Iditem = (int)row["iditem"];
             this.Item = row["item"].ToString();

@@ -39,6 +39,19 @@ namespace GarageManagement.GarageManagement_DAL
             return xeList;
         }
 
+        public XeDTO GetListXeById(int carnumber)
+        {
+            XeDTO xe = null;
+            DataTable data = DataProvider.Instance.ExecuteQuery("select * from dbo.xe where carnumber =" + carnumber);
+            foreach (DataRow item in data.Rows)
+            {
+                xe = new XeDTO(item);
+                return xe;
+
+            }
+            return xe;
+        }
+
         public bool InsertXe(int carnumber, string carbrand, int idKH)
         {
             string query = string.Format("insert dbo.xe (carnumber , carbrand , idkh) values ({0} , N'{1}', {2})", carnumber, carbrand,idKH);

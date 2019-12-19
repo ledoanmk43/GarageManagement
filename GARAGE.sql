@@ -72,14 +72,12 @@ CONSTRAINT [PK_KHOGARAGE] PRIMARY KEY CLUSTERED
 
 
 
-
-
 CREATE TABLE PHIEUSUACHUA
 (
 IDPSC INT NOT NULL ,
 CARNUMBER INT NOT NULL ,
 IDITEM INT NOT NULL , 
-DETAIL NVARCHAR(200) NOT NULL,	
+DETAIL NVARCHAR(2000) NOT NULL,	
 CREATEDDATE DATETIME2(7) NOT NULL,
 DONGIA FlOAT NULL DEFAULT 0,
 TIENCONG FLOAT NOT NULL DEFAULT 0,
@@ -212,6 +210,5 @@ END
 GO
 
 
-insert dbo.hosokhachhang (id , customername , address , phone , createddate , debt )values ( 1 , N'Tô Minh Khuê' , N'69/96' , 123456 , '11/12/2019 12:00:00' , 1000)
-
-update dbo.phieusuachua set carnumber = 111 , iditem = 77 , detail = 'Sửa xe' , createddate = '12/16/2019 12:00:00 AM' , dongia = 42000 , tiencong = 62000, totalprice =104000 where idpsc = 7749
+insert dbo.hosokhachhang ( id ,customername , address , phone , createddate , debt )values ( '' , N'C' , N'69/96' , 123456 , '11/12/2019 12:00:00' , 1000)
+select * from dbo.HOSOKHACHHANG
