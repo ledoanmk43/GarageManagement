@@ -471,6 +471,15 @@ namespace GarageManagement
 
         private void txtIDPSC_TextChanged(object sender, EventArgs e)
         {
+            
+        }
+
+
+
+        #endregion
+
+        private void tpPhieuSuaChua_FontChanged(object sender, EventArgs e)
+        {
             try
             {
                 if (dgvPSC.SelectedCells.Count > 0)
@@ -484,7 +493,7 @@ namespace GarageManagement
                     cbHieuXe.SelectedItem = xe;
                     cbVatLieu.SelectedItem = kho;
 
-                    int indexcar = -1 ;
+                    int indexcar = -1;
                     int indexkho = -1;
                     int i1 = 0;
                     int i2 = 0;
@@ -499,7 +508,7 @@ namespace GarageManagement
                     }
                     foreach (VatLieuDTO item in cbVatLieu.Items)
                     {
-                        if(item.Iditem == kho.Iditem)
+                        if (item.Iditem == kho.Iditem)
                         {
                             indexkho = i2;
                             break;
@@ -512,10 +521,5 @@ namespace GarageManagement
             }
             catch { }
         }
-
-
-        #endregion
-
-
     }
 }

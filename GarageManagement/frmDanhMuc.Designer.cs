@@ -815,6 +815,7 @@
             this.tpPhieuSuaChua.TabIndex = 3;
             this.tpPhieuSuaChua.Text = "Phiếu Sửa Chữa";
             this.tpPhieuSuaChua.UseVisualStyleBackColor = true;
+            this.tpPhieuSuaChua.FontChanged += new System.EventHandler(this.tpPhieuSuaChua_FontChanged);
             // 
             // cbVatLieu
             // 
@@ -1106,7 +1107,6 @@
             this.tpPhieuThuTien.TabIndex = 4;
             this.tpPhieuThuTien.Text = "Phiếu Thu Tiền";
             this.tpPhieuThuTien.UseVisualStyleBackColor = true;
-
             // 
             // frmDanhMuc
             // 
