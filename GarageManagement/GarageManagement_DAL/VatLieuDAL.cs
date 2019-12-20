@@ -49,6 +49,18 @@ namespace GarageManagement.GarageManagement_DAL
             return kho;
         }
 
+        public VatLieuDTO GetSLVatLieuById(int iditem)
+        {
+            VatLieuDTO kho = null;
+            DataTable data = DataProvider.Instance.ExecuteQuery("select slitem from dbo.vatlieu where iditem = " + iditem);
+            foreach (DataRow item in data.Rows)
+            {
+                kho = new VatLieuDTO(item);
+                return kho;
+            }
+            return kho;
+        }
+
         public bool InsertVatLieu( int iditem, string item , int slitem , DateTime? importeddate , DateTime? exporteddate)
         {
             string query = string.Format("insert dbo.vatlieu ( iditem , item , slitem ,importeddate , exporteddate ) values ({0} , N'{1}' , {2} , '{3}' , '{4}')",  iditem, item, slitem , importeddate, exporteddate);

@@ -38,6 +38,7 @@ namespace GarageManagement.GarageManagement_DAL
             return phieuthutienList;
         }
 
+
         public bool InsertPhieuThuTien(int idptt, int idkhachhang, int carnumber, DateTime? createddate, float sotienthu)
         {
             string query = string.Format("insert dbo.phieuthutien ( idptt, idkhachhang, carnumber, createddate, sotienthu ) ");

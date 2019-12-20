@@ -10,7 +10,6 @@ D:\Courses UIT\CNPM\Garage Management\GarageManagement\GarageManagement\obj\Debu
 D:\Courses UIT\CNPM\Garage Management\GarageManagement\GarageManagement\obj\Debug\GarageManagement.pdb
 C:\Users\PT - Computer\Desktop\GarageManagement\GarageManagement\obj\Debug\GarageManagement.csprojAssemblyReference.cache
 C:\Users\PT - Computer\Desktop\GarageManagement\GarageManagement\obj\Debug\GarageManagement.frmDanhMuc.resources
-C:\Users\PT - Computer\Desktop\GarageManagement\GarageManagement\obj\Debug\GarageManagement.AdministratorForm.resources
 C:\Users\PT - Computer\Desktop\GarageManagement\GarageManagement\obj\Debug\GarageManagement.frmLogin.resources
 C:\Users\PT - Computer\Desktop\GarageManagement\GarageManagement\obj\Debug\GarageManagement.Properties.Resources.resources
 C:\Users\PT - Computer\Desktop\GarageManagement\GarageManagement\obj\Debug\GarageManagement.csproj.GenerateResource.cache

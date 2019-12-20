@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.pnl1 = new System.Windows.Forms.Panel();
+            this.btnExit = new System.Windows.Forms.Button();
             this.btnLogin = new System.Windows.Forms.Button();
             this.txbPassword = new System.Windows.Forms.TextBox();
             this.txbUsername = new System.Windows.Forms.TextBox();
-            this.btnExit = new System.Windows.Forms.Button();
             this.pnl1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,6 +47,19 @@
             this.pnl1.Name = "pnl1";
             this.pnl1.Size = new System.Drawing.Size(300, 200);
             this.pnl1.TabIndex = 0;
+            // 
+            // btnExit
+            // 
+            this.btnExit.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExit.Location = new System.Drawing.Point(167, 133);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(112, 50);
+            this.btnExit.TabIndex = 1;
+            this.btnExit.Text = "Thoát";
+            this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // btnLogin
             // 
@@ -70,6 +83,7 @@
             this.txbPassword.PasswordChar = '●';
             this.txbPassword.Size = new System.Drawing.Size(261, 40);
             this.txbPassword.TabIndex = 2;
+            this.txbPassword.Text = "1";
             // 
             // txbUsername
             // 
@@ -79,27 +93,15 @@
             this.txbUsername.Name = "txbUsername";
             this.txbUsername.Size = new System.Drawing.Size(261, 40);
             this.txbUsername.TabIndex = 1;
+            this.txbUsername.Text = "admin";
             // 
-            // btnExit
-            // 
-            this.btnExit.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExit.Location = new System.Drawing.Point(167, 133);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(112, 50);
-            this.btnExit.TabIndex = 1;
-            this.btnExit.Text = "Thoát";
-            this.btnExit.UseVisualStyleBackColor = false;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
-            // LoginForm
+            // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(743, 476);
             this.Controls.Add(this.pnl1);
-            this.Name = "LoginForm";
+            this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăng nhập";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.LoginForm_FormClosing);

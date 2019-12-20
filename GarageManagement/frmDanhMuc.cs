@@ -49,7 +49,6 @@ namespace GarageManagement
             AddBindingPSC();
             AddBindingPTT();
             LoadComboboxVatLieu(cbVatLieu);
-            LoadComboboxHieuXe(cbHieuXe_PTT);
         }
         void LoadListKhachHang()
         {
@@ -90,6 +89,7 @@ namespace GarageManagement
         }
 
 
+
         bool CheckIntValue(string id)
         {
             int parsedValue;
@@ -105,6 +105,8 @@ namespace GarageManagement
             List<KhachHangDTO> list = KhachHangDAL.Instance.SearchKhachHangByNameAndID(text);
             return list;
         }
+
+
 
         void AddBindingKhachHang()
         {
@@ -137,6 +139,7 @@ namespace GarageManagement
         void AddBindingPSC()
         {
             txtIDPSC.DataBindings.Add(new Binding("Text", dgvPSC.DataSource, "idpsc", true, DataSourceUpdateMode.Never));
+            txtCarnumber_PSC.DataBindings.Add(new Binding("Text", dgvPSC.DataSource, "carnumber", true, DataSourceUpdateMode.Never));
             txtNoiDungPSC.DataBindings.Add(new Binding("Text", dgvPSC.DataSource, "detail", true, DataSourceUpdateMode.Never));
             dtpNgayTaoPSC.DataBindings.Add(new Binding("Value", dgvPSC.DataSource, "createddate", true, DataSourceUpdateMode.Never));
             txtDonGiaPSC.DataBindings.Add(new Binding("Text", dgvPSC.DataSource, "dongia", true, DataSourceUpdateMode.Never));
@@ -262,7 +265,6 @@ namespace GarageManagement
                     {
                         MessageBox.Show("Cập nhật xe thành công");
                         LoadListXe();
-                        LoadComboboxHieuXe(cbHieuXe_PTT);
                     }
                     else
                     {
@@ -284,7 +286,6 @@ namespace GarageManagement
                     {
                         MessageBox.Show("Xóa xe thành công");
                         LoadListXe();
-                        LoadComboboxHieuXe(cbHieuXe_PTT);
                     }
                     else
                     {
@@ -307,7 +308,6 @@ namespace GarageManagement
                     {
                         MessageBox.Show("Thêm xe thành công");
                         LoadListXe();
-                        LoadComboboxHieuXe(cbHieuXe_PTT);
                     }
                     else
                     {
@@ -495,12 +495,9 @@ namespace GarageManagement
                     int iditem = (int)dgvPSC.SelectedCells[0].OwningRow.Cells["iditem"].Value;
 
                     XeDTO xe = XeDAL.Instance.GetListXeById(carnumber);
-                    VatLieuDTO kho = VatLieuDAL.Instance.GetListKhoById(iditem);
-
+                    VatLieuDTO kho = VatLieuDAL.Instance.GetListKhoById(iditem);               
                     //cbHieuXe.SelectedItem = xe;
                     cbVatLieu.SelectedItem = kho;
-                    
-
                     int indexcar = -1;
                     int indexkho = -1;
                     int i1 = 0;
@@ -537,13 +534,13 @@ namespace GarageManagement
 
         private void btnSuaPhieuThuTien_Click(object sender, EventArgs e)
         {
-            if (CheckIntValue(txtIDPTT.Text))
+            if (CheckIntValue(txtIDPTT.Text) && CheckIntValue(txtMaKH_PTT.Text) && CheckIntValue(txtBienSo_PTT.Text))
             {
                 try
                 {
                     int idptt = Convert.ToInt32(txtIDPTT.Text);
                     int idkhachhang = Convert.ToInt32(txtMaKH_PTT.Text);
-                    int carnumber = (cbHieuXe_PTT.SelectedItem as XeDTO).Carnumber;
+                    int carnumber = Convert.ToInt32(txtBienSo_PTT.Text);
                     DateTime? createddate = dtpNgayTao_PTT.Value;
                     float sotienthu = (float)Convert.ToDouble(txtSoTienThu.Text);
                     if (PhieuThuTienDAL.Instance.UpdatePhieuThuTien(idptt, idkhachhang, carnumber, createddate, sotienthu))
@@ -563,7 +560,7 @@ namespace GarageManagement
 
         private void btnXoaPhieuThuTien_Click(object sender, EventArgs e)
         {
-            if (CheckIntValue(txtIDPTT.Text))
+            if (CheckIntValue(txtIDPTT.Text) )
             {
                 try
                 {
@@ -586,13 +583,13 @@ namespace GarageManagement
 
         private void btnThemPhieuThuTien_Click(object sender, EventArgs e)
         {
-            if (CheckIntValue(txtIDPTT.Text))
+            if (CheckIntValue(txtIDPTT.Text) && CheckIntValue(txtMaKH_PTT.Text) && CheckIntValue(txtBienSo_PTT.Text))
             {
                 try
                 {
                     int idptt = Convert.ToInt32(txtIDPTT.Text);
                     int idkhachhang = Convert.ToInt32(txtMaKH_PTT.Text);
-                    int carnumber = (cbHieuXe_PTT.SelectedItem as XeDTO).Carnumber;
+                    int carnumber = Convert.ToInt32(txtBienSo_PTT.Text);
                     DateTime? createddate = dtpNgayTao_PTT.Value;
                     float sotienthu = (float)Convert.ToDouble(txtSoTienThu.Text);
                     if (PhieuThuTienDAL.Instance.InsertPhieuThuTien(idptt, idkhachhang, carnumber, createddate, sotienthu))
@@ -610,33 +607,9 @@ namespace GarageManagement
             }
         }
 
-        private void txtIDPTT_TextChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                if (dgvPTT.SelectedCells.Count > 0)
-                {
-                    int carnumber = (int)dgvPTT.SelectedCells[0].OwningRow.Cells["Carnumber"].Value;
 
-                    XeDTO xe = XeDAL.Instance.GetListXeById(carnumber);
-                    cbHieuXe_PTT.SelectedItem = xe;
-                    int index = -1;
-                    int i = 0;
-                    foreach (XeDTO item in cbHieuXe_PTT.Items)
-                    {
-                        if (item.Carnumber == xe.Carnumber)
-                        {
-                            index = i;
-                            break;
-                        }
-                        i++;
-                    }
-                    cbHieuXe_PTT.SelectedIndex = index;
-                }
-            }
-            catch { }
 
-        }
+     
 
       
 

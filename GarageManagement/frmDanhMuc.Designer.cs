@@ -86,6 +86,7 @@
             this.btnThemKho = new System.Windows.Forms.Button();
             this.dgvKho = new System.Windows.Forms.DataGridView();
             this.tpPhieuSuaChua = new System.Windows.Forms.TabPage();
+            this.txtCarnumber_PSC = new System.Windows.Forms.TextBox();
             this.cbVatLieu = new System.Windows.Forms.ComboBox();
             this.txtNoiDungPSC = new System.Windows.Forms.TextBox();
             this.label30 = new System.Windows.Forms.Label();
@@ -112,7 +113,6 @@
             this.dgvPSC = new System.Windows.Forms.DataGridView();
             this.tpPhieuThuTien = new System.Windows.Forms.TabPage();
             this.txtMaKH_PTT = new System.Windows.Forms.TextBox();
-            this.cbHieuXe_PTT = new System.Windows.Forms.ComboBox();
             this.label32 = new System.Windows.Forms.Label();
             this.txtSoTienThu = new System.Windows.Forms.TextBox();
             this.dtpNgayTao_PTT = new System.Windows.Forms.DateTimePicker();
@@ -130,7 +130,7 @@
             this.btnXoaPhieuThuTien = new System.Windows.Forms.Button();
             this.btnThemPhieuThuTien = new System.Windows.Forms.Button();
             this.dgvPTT = new System.Windows.Forms.DataGridView();
-            this.txtCarnumber_PSC = new System.Windows.Forms.TextBox();
+            this.txtBienSo_PTT = new System.Windows.Forms.TextBox();
             this.tbKhachHang.SuspendLayout();
             this.tpKhachHang.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKhachHang)).BeginInit();
@@ -833,13 +833,21 @@
             this.tpPhieuSuaChua.Text = "Phiếu Sửa Chữa";
             this.tpPhieuSuaChua.UseVisualStyleBackColor = true;
             // 
+            // txtCarnumber_PSC
+            // 
+            this.txtCarnumber_PSC.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCarnumber_PSC.Location = new System.Drawing.Point(819, 169);
+            this.txtCarnumber_PSC.Name = "txtCarnumber_PSC";
+            this.txtCarnumber_PSC.Size = new System.Drawing.Size(335, 27);
+            this.txtCarnumber_PSC.TabIndex = 142;
+            // 
             // cbVatLieu
             // 
             this.cbVatLieu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbVatLieu.FormattingEnabled = true;
             this.cbVatLieu.Location = new System.Drawing.Point(819, 233);
             this.cbVatLieu.Name = "cbVatLieu";
-            this.cbVatLieu.Size = new System.Drawing.Size(348, 28);
+            this.cbVatLieu.Size = new System.Drawing.Size(335, 28);
             this.cbVatLieu.TabIndex = 141;
             // 
             // txtNoiDungPSC
@@ -847,7 +855,7 @@
             this.txtNoiDungPSC.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNoiDungPSC.Location = new System.Drawing.Point(819, 294);
             this.txtNoiDungPSC.Name = "txtNoiDungPSC";
-            this.txtNoiDungPSC.Size = new System.Drawing.Size(348, 27);
+            this.txtNoiDungPSC.Size = new System.Drawing.Size(335, 27);
             this.txtNoiDungPSC.TabIndex = 139;
             // 
             // label30
@@ -867,7 +875,7 @@
             this.txtTotalPricePSC.Location = new System.Drawing.Point(819, 542);
             this.txtTotalPricePSC.Name = "txtTotalPricePSC";
             this.txtTotalPricePSC.ReadOnly = true;
-            this.txtTotalPricePSC.Size = new System.Drawing.Size(348, 30);
+            this.txtTotalPricePSC.Size = new System.Drawing.Size(335, 30);
             this.txtTotalPricePSC.TabIndex = 137;
             this.txtTotalPricePSC.Text = "0";
             this.txtTotalPricePSC.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -888,7 +896,7 @@
             this.txtDonGiaPSC.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDonGiaPSC.Location = new System.Drawing.Point(819, 411);
             this.txtDonGiaPSC.Name = "txtDonGiaPSC";
-            this.txtDonGiaPSC.Size = new System.Drawing.Size(348, 27);
+            this.txtDonGiaPSC.Size = new System.Drawing.Size(335, 27);
             this.txtDonGiaPSC.TabIndex = 135;
             // 
             // dtpNgayTaoPSC
@@ -896,7 +904,7 @@
             this.dtpNgayTaoPSC.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpNgayTaoPSC.Location = new System.Drawing.Point(819, 349);
             this.dtpNgayTaoPSC.Name = "dtpNgayTaoPSC";
-            this.dtpNgayTaoPSC.Size = new System.Drawing.Size(348, 27);
+            this.dtpNgayTaoPSC.Size = new System.Drawing.Size(335, 27);
             this.dtpNgayTaoPSC.TabIndex = 134;
             this.dtpNgayTaoPSC.Value = new System.DateTime(2019, 12, 16, 0, 0, 0, 0);
             // 
@@ -927,7 +935,7 @@
             this.txtTienCongPSC.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTienCongPSC.Location = new System.Drawing.Point(819, 477);
             this.txtTienCongPSC.Name = "txtTienCongPSC";
-            this.txtTienCongPSC.Size = new System.Drawing.Size(348, 27);
+            this.txtTienCongPSC.Size = new System.Drawing.Size(335, 27);
             this.txtTienCongPSC.TabIndex = 130;
             // 
             // label27
@@ -999,7 +1007,7 @@
             this.txtIDPSC.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtIDPSC.Location = new System.Drawing.Point(819, 108);
             this.txtIDPSC.Name = "txtIDPSC";
-            this.txtIDPSC.Size = new System.Drawing.Size(348, 27);
+            this.txtIDPSC.Size = new System.Drawing.Size(335, 27);
             this.txtIDPSC.TabIndex = 118;
             this.txtIDPSC.TextChanged += new System.EventHandler(this.txtIDPSC_TextChanged);
             // 
@@ -1087,8 +1095,8 @@
             // 
             // tpPhieuThuTien
             // 
+            this.tpPhieuThuTien.Controls.Add(this.txtBienSo_PTT);
             this.tpPhieuThuTien.Controls.Add(this.txtMaKH_PTT);
-            this.tpPhieuThuTien.Controls.Add(this.cbHieuXe_PTT);
             this.tpPhieuThuTien.Controls.Add(this.label32);
             this.tpPhieuThuTien.Controls.Add(this.txtSoTienThu);
             this.tpPhieuThuTien.Controls.Add(this.dtpNgayTao_PTT);
@@ -1121,15 +1129,6 @@
             this.txtMaKH_PTT.Name = "txtMaKH_PTT";
             this.txtMaKH_PTT.Size = new System.Drawing.Size(303, 27);
             this.txtMaKH_PTT.TabIndex = 169;
-            // 
-            // cbHieuXe_PTT
-            // 
-            this.cbHieuXe_PTT.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbHieuXe_PTT.FormattingEnabled = true;
-            this.cbHieuXe_PTT.Location = new System.Drawing.Point(806, 249);
-            this.cbHieuXe_PTT.Name = "cbHieuXe_PTT";
-            this.cbHieuXe_PTT.Size = new System.Drawing.Size(303, 28);
-            this.cbHieuXe_PTT.TabIndex = 168;
             // 
             // label32
             // 
@@ -1177,9 +1176,9 @@
             this.label36.ForeColor = System.Drawing.Color.DarkBlue;
             this.label36.Location = new System.Drawing.Point(590, 249);
             this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(122, 24);
+            this.label36.Size = new System.Drawing.Size(116, 24);
             this.label36.TabIndex = 156;
-            this.label36.Text = "Hiệu xe sửa";
+            this.label36.Text = "Biển số xe:";
             // 
             // label37
             // 
@@ -1229,8 +1228,6 @@
             this.txtIDPTT.Location = new System.Drawing.Point(806, 124);
             this.txtIDPTT.Name = "txtIDPTT";
             this.txtIDPTT.Size = new System.Drawing.Size(303, 27);
-            this.txtIDPTT.TabIndex = 151;
-            this.txtIDPTT.TextChanged += new System.EventHandler(this.txtIDPTT_TextChanged);
             // 
             // label41
             // 
@@ -1314,19 +1311,19 @@
             this.dgvPTT.Size = new System.Drawing.Size(546, 513);
             this.dgvPTT.TabIndex = 142;
             // 
-            // txtCarnumber_PSC
+            // txtBienSo_PTT
             // 
-            this.txtCarnumber_PSC.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCarnumber_PSC.Location = new System.Drawing.Point(819, 169);
-            this.txtCarnumber_PSC.Name = "txtCarnumber_PSC";
-            this.txtCarnumber_PSC.Size = new System.Drawing.Size(348, 27);
-            this.txtCarnumber_PSC.TabIndex = 142;
+            this.txtBienSo_PTT.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBienSo_PTT.Location = new System.Drawing.Point(806, 246);
+            this.txtBienSo_PTT.Name = "txtBienSo_PTT";
+            this.txtBienSo_PTT.Size = new System.Drawing.Size(303, 27);
+            this.txtBienSo_PTT.TabIndex = 170;
             // 
             // frmDanhMuc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1211, 673);
+            this.ClientSize = new System.Drawing.Size(1194, 673);
             this.Controls.Add(this.tbKhachHang);
             this.MaximizeBox = false;
             this.Name = "frmDanhMuc";
@@ -1439,7 +1436,6 @@
         private System.Windows.Forms.TextBox txtNoiDungPSC;
         private System.Windows.Forms.ComboBox cbVatLieu;
         private System.Windows.Forms.TextBox txtMaKH_PTT;
-        private System.Windows.Forms.ComboBox cbHieuXe_PTT;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.TextBox txtSoTienThu;
         private System.Windows.Forms.DateTimePicker dtpNgayTao_PTT;
@@ -1458,5 +1454,6 @@
         private System.Windows.Forms.Button btnThemPhieuThuTien;
         private System.Windows.Forms.DataGridView dgvPTT;
         private System.Windows.Forms.TextBox txtCarnumber_PSC;
+        private System.Windows.Forms.TextBox txtBienSo_PTT;
     }
 }
