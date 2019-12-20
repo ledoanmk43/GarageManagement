@@ -16,7 +16,7 @@ namespace GarageManagement
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmDanhMuc());
+            Application.Run(new frmLogin());
         }
     }
 }

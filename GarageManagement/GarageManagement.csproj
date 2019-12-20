@@ -46,12 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmQuanLyGara.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmQuanLyGara.Designer.cs">
-      <DependentUpon>frmQuanLyGara.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmDanhMuc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,9 +75,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmDanhMuc.resx">
       <DependentUpon>frmDanhMuc.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmQuanLyGara.resx">
-      <DependentUpon>frmQuanLyGara.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>

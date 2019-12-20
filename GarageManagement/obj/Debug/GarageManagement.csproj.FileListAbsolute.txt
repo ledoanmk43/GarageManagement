@@ -19,3 +19,14 @@ C:\Users\PT - Computer\Desktop\GarageManagement\GarageManagement\obj\Debug\Garag
 C:\Users\PT - Computer\Desktop\GarageManagement\GarageManagement\bin\Debug\GarageManagement.exe.config
 C:\Users\PT - Computer\Desktop\GarageManagement\GarageManagement\bin\Debug\GarageManagement.exe
 C:\Users\PT - Computer\Desktop\GarageManagement\GarageManagement\bin\Debug\GarageManagement.pdb
+C:\Users\Admin\Documents\GitHub\GarageManagement\GarageManagement\bin\Debug\GarageManagement.exe.config
+C:\Users\Admin\Documents\GitHub\GarageManagement\GarageManagement\bin\Debug\GarageManagement.exe
+C:\Users\Admin\Documents\GitHub\GarageManagement\GarageManagement\bin\Debug\GarageManagement.pdb
+C:\Users\Admin\Documents\GitHub\GarageManagement\GarageManagement\obj\Debug\GarageManagement.csprojAssemblyReference.cache
+C:\Users\Admin\Documents\GitHub\GarageManagement\GarageManagement\obj\Debug\GarageManagement.frmDanhMuc.resources
+C:\Users\Admin\Documents\GitHub\GarageManagement\GarageManagement\obj\Debug\GarageManagement.frmLogin.resources
+C:\Users\Admin\Documents\GitHub\GarageManagement\GarageManagement\obj\Debug\GarageManagement.Properties.Resources.resources
+C:\Users\Admin\Documents\GitHub\GarageManagement\GarageManagement\obj\Debug\GarageManagement.csproj.GenerateResource.cache
+C:\Users\Admin\Documents\GitHub\GarageManagement\GarageManagement\obj\Debug\GarageManagement.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Documents\GitHub\GarageManagement\GarageManagement\obj\Debug\GarageManagement.exe
+C:\Users\Admin\Documents\GitHub\GarageManagement\GarageManagement\obj\Debug\GarageManagement.pdb

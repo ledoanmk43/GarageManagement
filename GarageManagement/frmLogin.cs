@@ -38,7 +38,7 @@ namespace GarageManagement
                 try
                 {
                     AccountDTO loginAccount = AccountDAL.Instance.GetAccountByUserName(userName);
-                    AdministratorForm adminFrom = new AdministratorForm(loginAccount);
+                    frmDanhMuc adminFrom = new frmDanhMuc(loginAccount);
                     this.Hide();
                     adminFrom.ShowDialog();
                     this.Show();

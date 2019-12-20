@@ -24,7 +24,7 @@ namespace GarageManagement
         BindingSource xeList = new BindingSource();
         BindingSource pscList = new BindingSource();
         BindingSource pttList = new BindingSource();
-        public frmDanhMuc()
+        public frmDanhMuc(AccountDTO loginAccount)
         {
             InitializeComponent();
             LoadMethod();
