@@ -211,4 +211,3 @@ GO
 
 
 insert dbo.hosokhachhang ( id ,customername , address , phone , createddate , debt )values ( '' , N'C' , N'69/96' , 123456 , '11/12/2019 12:00:00' , 1000)
-select * from dbo.HOSOKHACHHANG

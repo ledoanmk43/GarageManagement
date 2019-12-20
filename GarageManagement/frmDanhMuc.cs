@@ -48,7 +48,6 @@ namespace GarageManagement
             LoadListPTT();
             AddBindingPSC();
             AddBindingPTT();
-            LoadComboboxHieuXe(cbHieuXe);
             LoadComboboxVatLieu(cbVatLieu);
             LoadComboboxHieuXe(cbHieuXe_PTT);
         }
@@ -263,7 +262,6 @@ namespace GarageManagement
                     {
                         MessageBox.Show("Cập nhật xe thành công");
                         LoadListXe();
-                        LoadComboboxHieuXe(cbHieuXe);
                         LoadComboboxHieuXe(cbHieuXe_PTT);
                     }
                     else
@@ -286,7 +284,6 @@ namespace GarageManagement
                     {
                         MessageBox.Show("Xóa xe thành công");
                         LoadListXe();
-                        LoadComboboxHieuXe(cbHieuXe);
                         LoadComboboxHieuXe(cbHieuXe_PTT);
                     }
                     else
@@ -310,7 +307,6 @@ namespace GarageManagement
                     {
                         MessageBox.Show("Thêm xe thành công");
                         LoadListXe();
-                        LoadComboboxHieuXe(cbHieuXe);
                         LoadComboboxHieuXe(cbHieuXe_PTT);
                     }
                     else
@@ -337,7 +333,6 @@ namespace GarageManagement
                     {
                         MessageBox.Show("Thêm vào kho thành công");
                         LoadKho();
-                        LoadComboboxHieuXe(cbHieuXe);
                         LoadComboboxVatLieu(cbVatLieu);
 
 
@@ -368,7 +363,6 @@ namespace GarageManagement
                     {
                         MessageBox.Show("Xóa vật liệu kho thành công");
                         LoadKho();
-                        LoadComboboxHieuXe(cbHieuXe);
                         LoadComboboxVatLieu(cbVatLieu);
                     }
                     else
@@ -399,7 +393,6 @@ namespace GarageManagement
                     {
                         MessageBox.Show("Cập nhật kho thành công");
                         LoadKho();
-                        LoadComboboxHieuXe(cbHieuXe);
                         LoadComboboxVatLieu(cbVatLieu);
                     }
                     else
@@ -417,12 +410,12 @@ namespace GarageManagement
 
         private void btnSuaPSC_Click(object sender, EventArgs e)
         {
-            if (CheckIntValue(txtIDPSC.Text) == true)
+            if (CheckIntValue(txtIDPSC.Text) && CheckIntValue(txtCarnumber_PSC.Text)  == true)
             {
                 try
                 {
                     int idpsc = Convert.ToInt32(txtIDPSC.Text);
-                    int carnumber = (cbHieuXe.SelectedItem as XeDTO).Carnumber;
+                    int carnumber = Convert.ToInt32(txtCarnumber_PSC.Text);
                     int iditem = (cbVatLieu.SelectedItem as VatLieuDTO).Iditem;
                     string detail = txtNoiDungPSC.Text;
                     DateTime? createddate = dtpNgayTaoPSC.Value;
@@ -465,12 +458,12 @@ namespace GarageManagement
 
         private void btnThemPSC_Click(object sender, EventArgs e)
         {
-            if (CheckIntValue(txtIDPSC.Text) )
+            if (CheckIntValue(txtIDPSC.Text) && CheckIntValue(txtCarnumber_PSC.Text) == true)
             {
                 try
                 {
                     int idpsc = Convert.ToInt32(txtIDPSC.Text);
-                    int carnumber = (cbHieuXe.SelectedItem as XeDTO).Carnumber;
+                    int carnumber = Convert.ToInt32(txtCarnumber_PSC.Text);
                     int iditem = (cbVatLieu.SelectedItem as VatLieuDTO).Iditem;
                     string detail = txtNoiDungPSC.Text;
                     DateTime? createddate = dtpNgayTaoPSC.Value;
@@ -504,22 +497,23 @@ namespace GarageManagement
                     XeDTO xe = XeDAL.Instance.GetListXeById(carnumber);
                     VatLieuDTO kho = VatLieuDAL.Instance.GetListKhoById(iditem);
 
-                    cbHieuXe.SelectedItem = xe;
+                    //cbHieuXe.SelectedItem = xe;
                     cbVatLieu.SelectedItem = kho;
+                    
 
                     int indexcar = -1;
                     int indexkho = -1;
                     int i1 = 0;
                     int i2 = 0;
-                    foreach (XeDTO item in cbHieuXe.Items)
-                    {
-                        if (item.Carnumber == xe.Carnumber)
-                        {
-                            indexcar = i1;
-                            break;
-                        }
-                        i1++;
-                    }
+                    //foreach (XeDTO item in cbHieuXe.Items)
+                    //{
+                    //    if (item.Carnumber == xe.Carnumber)
+                    //    {
+                    //        indexcar = i1;
+                    //        break;
+                    //    }
+                    //    i1++;
+                    //}
                     foreach (VatLieuDTO item in cbVatLieu.Items)
                     {
                         if (item.Iditem == kho.Iditem)
@@ -529,7 +523,7 @@ namespace GarageManagement
                         }
                         i2++;
                     }
-                    cbHieuXe.SelectedIndex = indexcar;
+                    //cbHieuXe.SelectedIndex = indexcar;
                     cbVatLieu.SelectedIndex = indexkho;
                 }
             }
@@ -643,6 +637,8 @@ namespace GarageManagement
             catch { }
 
         }
+
+      
 
         #endregion
 

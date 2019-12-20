@@ -52,6 +52,7 @@ namespace GarageManagement.GarageManagement_DAL
             return xe;
         }
 
+
         public bool InsertXe(int carnumber, string carbrand, int idKH)
         {
             string query = string.Format("insert dbo.xe (carnumber , carbrand , idkh) values ({0} , N'{1}', {2})", carnumber, carbrand,idKH);

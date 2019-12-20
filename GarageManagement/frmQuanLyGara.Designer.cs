@@ -74,13 +74,14 @@
             // tsDoanhSo
             // 
             this.tsDoanhSo.Name = "tsDoanhSo";
-            this.tsDoanhSo.Size = new System.Drawing.Size(211, 26);
+            this.tsDoanhSo.Size = new System.Drawing.Size(224, 26);
             this.tsDoanhSo.Text = "Báo cáo doanh số";
+            this.tsDoanhSo.Click += new System.EventHandler(this.tsDoanhSo_Click);
             // 
             // tsTonKho
             // 
             this.tsTonKho.Name = "tsTonKho";
-            this.tsTonKho.Size = new System.Drawing.Size(211, 26);
+            this.tsTonKho.Size = new System.Drawing.Size(224, 26);
             this.tsTonKho.Text = "Báo cáo tồn kho";
             // 
             // mnsTaiKhoan
@@ -95,13 +96,13 @@
             // tsTTTK
             // 
             this.tsTTTK.Name = "tsTTTK";
-            this.tsTTTK.Size = new System.Drawing.Size(220, 26);
+            this.tsTTTK.Size = new System.Drawing.Size(224, 26);
             this.tsTTTK.Text = "Thông tin tài khoản";
             // 
             // tsDangXuat
             // 
             this.tsDangXuat.Name = "tsDangXuat";
-            this.tsDangXuat.Size = new System.Drawing.Size(220, 26);
+            this.tsDangXuat.Size = new System.Drawing.Size(224, 26);
             this.tsDangXuat.Text = "Đăng xuất";
             // 
             // adminToolStripMenuItem

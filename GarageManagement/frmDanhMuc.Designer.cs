@@ -87,7 +87,6 @@
             this.dgvKho = new System.Windows.Forms.DataGridView();
             this.tpPhieuSuaChua = new System.Windows.Forms.TabPage();
             this.cbVatLieu = new System.Windows.Forms.ComboBox();
-            this.cbHieuXe = new System.Windows.Forms.ComboBox();
             this.txtNoiDungPSC = new System.Windows.Forms.TextBox();
             this.label30 = new System.Windows.Forms.Label();
             this.txtTotalPricePSC = new System.Windows.Forms.TextBox();
@@ -131,6 +130,7 @@
             this.btnXoaPhieuThuTien = new System.Windows.Forms.Button();
             this.btnThemPhieuThuTien = new System.Windows.Forms.Button();
             this.dgvPTT = new System.Windows.Forms.DataGridView();
+            this.txtCarnumber_PSC = new System.Windows.Forms.TextBox();
             this.tbKhachHang.SuspendLayout();
             this.tpKhachHang.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKhachHang)).BeginInit();
@@ -155,7 +155,7 @@
             this.tbKhachHang.Location = new System.Drawing.Point(1, 3);
             this.tbKhachHang.Name = "tbKhachHang";
             this.tbKhachHang.SelectedIndex = 0;
-            this.tbKhachHang.Size = new System.Drawing.Size(1139, 687);
+            this.tbKhachHang.Size = new System.Drawing.Size(1233, 687);
             this.tbKhachHang.TabIndex = 0;
             // 
             // tpKhachHang
@@ -182,7 +182,7 @@
             this.tpKhachHang.Location = new System.Drawing.Point(4, 25);
             this.tpKhachHang.Name = "tpKhachHang";
             this.tpKhachHang.Padding = new System.Windows.Forms.Padding(3);
-            this.tpKhachHang.Size = new System.Drawing.Size(1131, 658);
+            this.tpKhachHang.Size = new System.Drawing.Size(1225, 658);
             this.tpKhachHang.TabIndex = 1;
             this.tpKhachHang.Text = "Hồ Sơ Khách Hàng";
             this.tpKhachHang.UseVisualStyleBackColor = true;
@@ -403,7 +403,7 @@
             this.tpXe.Location = new System.Drawing.Point(4, 25);
             this.tpXe.Name = "tpXe";
             this.tpXe.Padding = new System.Windows.Forms.Padding(3);
-            this.tpXe.Size = new System.Drawing.Size(1131, 658);
+            this.tpXe.Size = new System.Drawing.Size(1225, 658);
             this.tpXe.TabIndex = 0;
             this.tpXe.Text = "Xe";
             this.tpXe.UseVisualStyleBackColor = true;
@@ -575,7 +575,7 @@
             this.tpKho.Location = new System.Drawing.Point(4, 25);
             this.tpKho.Name = "tpKho";
             this.tpKho.Padding = new System.Windows.Forms.Padding(3);
-            this.tpKho.Size = new System.Drawing.Size(1131, 658);
+            this.tpKho.Size = new System.Drawing.Size(1225, 658);
             this.tpKho.TabIndex = 2;
             this.tpKho.Text = "Kho vật tư phụ tùng";
             this.tpKho.UseVisualStyleBackColor = true;
@@ -800,8 +800,8 @@
             // 
             // tpPhieuSuaChua
             // 
+            this.tpPhieuSuaChua.Controls.Add(this.txtCarnumber_PSC);
             this.tpPhieuSuaChua.Controls.Add(this.cbVatLieu);
-            this.tpPhieuSuaChua.Controls.Add(this.cbHieuXe);
             this.tpPhieuSuaChua.Controls.Add(this.txtNoiDungPSC);
             this.tpPhieuSuaChua.Controls.Add(this.label30);
             this.tpPhieuSuaChua.Controls.Add(this.txtTotalPricePSC);
@@ -828,7 +828,7 @@
             this.tpPhieuSuaChua.Location = new System.Drawing.Point(4, 25);
             this.tpPhieuSuaChua.Name = "tpPhieuSuaChua";
             this.tpPhieuSuaChua.Padding = new System.Windows.Forms.Padding(3);
-            this.tpPhieuSuaChua.Size = new System.Drawing.Size(1131, 658);
+            this.tpPhieuSuaChua.Size = new System.Drawing.Size(1225, 658);
             this.tpPhieuSuaChua.TabIndex = 3;
             this.tpPhieuSuaChua.Text = "Phiếu Sửa Chữa";
             this.tpPhieuSuaChua.UseVisualStyleBackColor = true;
@@ -837,26 +837,17 @@
             // 
             this.cbVatLieu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbVatLieu.FormattingEnabled = true;
-            this.cbVatLieu.Location = new System.Drawing.Point(805, 233);
+            this.cbVatLieu.Location = new System.Drawing.Point(819, 233);
             this.cbVatLieu.Name = "cbVatLieu";
-            this.cbVatLieu.Size = new System.Drawing.Size(303, 28);
+            this.cbVatLieu.Size = new System.Drawing.Size(348, 28);
             this.cbVatLieu.TabIndex = 141;
-            // 
-            // cbHieuXe
-            // 
-            this.cbHieuXe.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbHieuXe.FormattingEnabled = true;
-            this.cbHieuXe.Location = new System.Drawing.Point(805, 172);
-            this.cbHieuXe.Name = "cbHieuXe";
-            this.cbHieuXe.Size = new System.Drawing.Size(303, 28);
-            this.cbHieuXe.TabIndex = 140;
             // 
             // txtNoiDungPSC
             // 
             this.txtNoiDungPSC.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNoiDungPSC.Location = new System.Drawing.Point(805, 294);
+            this.txtNoiDungPSC.Location = new System.Drawing.Point(819, 294);
             this.txtNoiDungPSC.Name = "txtNoiDungPSC";
-            this.txtNoiDungPSC.Size = new System.Drawing.Size(303, 27);
+            this.txtNoiDungPSC.Size = new System.Drawing.Size(348, 27);
             this.txtNoiDungPSC.TabIndex = 139;
             // 
             // label30
@@ -873,10 +864,10 @@
             // txtTotalPricePSC
             // 
             this.txtTotalPricePSC.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotalPricePSC.Location = new System.Drawing.Point(805, 542);
+            this.txtTotalPricePSC.Location = new System.Drawing.Point(819, 542);
             this.txtTotalPricePSC.Name = "txtTotalPricePSC";
             this.txtTotalPricePSC.ReadOnly = true;
-            this.txtTotalPricePSC.Size = new System.Drawing.Size(303, 30);
+            this.txtTotalPricePSC.Size = new System.Drawing.Size(348, 30);
             this.txtTotalPricePSC.TabIndex = 137;
             this.txtTotalPricePSC.Text = "0";
             this.txtTotalPricePSC.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -895,17 +886,17 @@
             // txtDonGiaPSC
             // 
             this.txtDonGiaPSC.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDonGiaPSC.Location = new System.Drawing.Point(805, 411);
+            this.txtDonGiaPSC.Location = new System.Drawing.Point(819, 411);
             this.txtDonGiaPSC.Name = "txtDonGiaPSC";
-            this.txtDonGiaPSC.Size = new System.Drawing.Size(303, 27);
+            this.txtDonGiaPSC.Size = new System.Drawing.Size(348, 27);
             this.txtDonGiaPSC.TabIndex = 135;
             // 
             // dtpNgayTaoPSC
             // 
             this.dtpNgayTaoPSC.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpNgayTaoPSC.Location = new System.Drawing.Point(805, 349);
+            this.dtpNgayTaoPSC.Location = new System.Drawing.Point(819, 349);
             this.dtpNgayTaoPSC.Name = "dtpNgayTaoPSC";
-            this.dtpNgayTaoPSC.Size = new System.Drawing.Size(303, 27);
+            this.dtpNgayTaoPSC.Size = new System.Drawing.Size(348, 27);
             this.dtpNgayTaoPSC.TabIndex = 134;
             this.dtpNgayTaoPSC.Value = new System.DateTime(2019, 12, 16, 0, 0, 0, 0);
             // 
@@ -934,9 +925,9 @@
             // txtTienCongPSC
             // 
             this.txtTienCongPSC.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTienCongPSC.Location = new System.Drawing.Point(805, 477);
+            this.txtTienCongPSC.Location = new System.Drawing.Point(819, 477);
             this.txtTienCongPSC.Name = "txtTienCongPSC";
-            this.txtTienCongPSC.Size = new System.Drawing.Size(303, 27);
+            this.txtTienCongPSC.Size = new System.Drawing.Size(348, 27);
             this.txtTienCongPSC.TabIndex = 130;
             // 
             // label27
@@ -968,9 +959,9 @@
             this.label21.ForeColor = System.Drawing.Color.DarkBlue;
             this.label21.Location = new System.Drawing.Point(589, 172);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(129, 24);
+            this.label21.Size = new System.Drawing.Size(164, 24);
             this.label21.TabIndex = 123;
-            this.label21.Text = "Hiệu xe sửa:";
+            this.label21.Text = "Biển số xe sửa :";
             // 
             // label22
             // 
@@ -1006,9 +997,9 @@
             // txtIDPSC
             // 
             this.txtIDPSC.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIDPSC.Location = new System.Drawing.Point(805, 108);
+            this.txtIDPSC.Location = new System.Drawing.Point(819, 108);
             this.txtIDPSC.Name = "txtIDPSC";
-            this.txtIDPSC.Size = new System.Drawing.Size(303, 27);
+            this.txtIDPSC.Size = new System.Drawing.Size(348, 27);
             this.txtIDPSC.TabIndex = 118;
             this.txtIDPSC.TextChanged += new System.EventHandler(this.txtIDPSC_TextChanged);
             // 
@@ -1118,7 +1109,7 @@
             this.tpPhieuThuTien.Location = new System.Drawing.Point(4, 25);
             this.tpPhieuThuTien.Name = "tpPhieuThuTien";
             this.tpPhieuThuTien.Padding = new System.Windows.Forms.Padding(3);
-            this.tpPhieuThuTien.Size = new System.Drawing.Size(1131, 658);
+            this.tpPhieuThuTien.Size = new System.Drawing.Size(1225, 658);
             this.tpPhieuThuTien.TabIndex = 4;
             this.tpPhieuThuTien.Text = "Phiếu Thu Tiền";
             this.tpPhieuThuTien.UseVisualStyleBackColor = true;
@@ -1266,7 +1257,7 @@
             this.btnXemPhieuThuTien.BackColor = System.Drawing.Color.SeaGreen;
             this.btnXemPhieuThuTien.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXemPhieuThuTien.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnXemPhieuThuTien.Location = new System.Drawing.Point(460, 33);
+            this.btnXemPhieuThuTien.Location = new System.Drawing.Point(461, 26);
             this.btnXemPhieuThuTien.Name = "btnXemPhieuThuTien";
             this.btnXemPhieuThuTien.Size = new System.Drawing.Size(108, 74);
             this.btnXemPhieuThuTien.TabIndex = 146;
@@ -1279,7 +1270,7 @@
             this.btnSuaPhieuThuTien.BackColor = System.Drawing.Color.SeaGreen;
             this.btnSuaPhieuThuTien.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSuaPhieuThuTien.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnSuaPhieuThuTien.Location = new System.Drawing.Point(314, 33);
+            this.btnSuaPhieuThuTien.Location = new System.Drawing.Point(315, 26);
             this.btnSuaPhieuThuTien.Name = "btnSuaPhieuThuTien";
             this.btnSuaPhieuThuTien.Size = new System.Drawing.Size(108, 74);
             this.btnSuaPhieuThuTien.TabIndex = 145;
@@ -1292,7 +1283,7 @@
             this.btnXoaPhieuThuTien.BackColor = System.Drawing.Color.SeaGreen;
             this.btnXoaPhieuThuTien.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoaPhieuThuTien.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnXoaPhieuThuTien.Location = new System.Drawing.Point(167, 33);
+            this.btnXoaPhieuThuTien.Location = new System.Drawing.Point(168, 26);
             this.btnXoaPhieuThuTien.Name = "btnXoaPhieuThuTien";
             this.btnXoaPhieuThuTien.Size = new System.Drawing.Size(108, 74);
             this.btnXoaPhieuThuTien.TabIndex = 144;
@@ -1305,7 +1296,7 @@
             this.btnThemPhieuThuTien.BackColor = System.Drawing.Color.SeaGreen;
             this.btnThemPhieuThuTien.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThemPhieuThuTien.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnThemPhieuThuTien.Location = new System.Drawing.Point(22, 33);
+            this.btnThemPhieuThuTien.Location = new System.Drawing.Point(23, 26);
             this.btnThemPhieuThuTien.Name = "btnThemPhieuThuTien";
             this.btnThemPhieuThuTien.Size = new System.Drawing.Size(108, 74);
             this.btnThemPhieuThuTien.TabIndex = 143;
@@ -1316,18 +1307,26 @@
             // dgvPTT
             // 
             this.dgvPTT.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPTT.Location = new System.Drawing.Point(22, 113);
+            this.dgvPTT.Location = new System.Drawing.Point(23, 106);
             this.dgvPTT.Name = "dgvPTT";
             this.dgvPTT.RowHeadersWidth = 51;
             this.dgvPTT.RowTemplate.Height = 24;
             this.dgvPTT.Size = new System.Drawing.Size(546, 513);
             this.dgvPTT.TabIndex = 142;
             // 
+            // txtCarnumber_PSC
+            // 
+            this.txtCarnumber_PSC.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCarnumber_PSC.Location = new System.Drawing.Point(819, 169);
+            this.txtCarnumber_PSC.Name = "txtCarnumber_PSC";
+            this.txtCarnumber_PSC.Size = new System.Drawing.Size(348, 27);
+            this.txtCarnumber_PSC.TabIndex = 142;
+            // 
             // frmDanhMuc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1139, 673);
+            this.ClientSize = new System.Drawing.Size(1211, 673);
             this.Controls.Add(this.tbKhachHang);
             this.MaximizeBox = false;
             this.Name = "frmDanhMuc";
@@ -1438,7 +1437,6 @@
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.DateTimePicker dtpNgayGui;
         private System.Windows.Forms.TextBox txtNoiDungPSC;
-        private System.Windows.Forms.ComboBox cbHieuXe;
         private System.Windows.Forms.ComboBox cbVatLieu;
         private System.Windows.Forms.TextBox txtMaKH_PTT;
         private System.Windows.Forms.ComboBox cbHieuXe_PTT;
@@ -1459,5 +1457,6 @@
         private System.Windows.Forms.Button btnXoaPhieuThuTien;
         private System.Windows.Forms.Button btnThemPhieuThuTien;
         private System.Windows.Forms.DataGridView dgvPTT;
+        private System.Windows.Forms.TextBox txtCarnumber_PSC;
     }
 }

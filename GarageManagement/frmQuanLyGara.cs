@@ -34,5 +34,10 @@ namespace GarageManagement
             frmDanhMuc f = new frmDanhMuc();
             f.Show();
         }
+
+        private void tsDoanhSo_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
