@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using GarageManagement_DTO;
+using System.Security.Cryptography;
 
 namespace GarageManagement_DAL
 {
@@ -28,8 +29,18 @@ namespace GarageManagement_DAL
         private AccountDAL() { }
         public bool Login(string userName, string passWord)
         {
-            string query = "USP_Login @userName , @passWord";   
-           DataTable result = DataProvider.Instance.ExecuteQuery(query, new object[] { userName, passWord });
+            byte[] temp = ASCIIEncoding.ASCII.GetBytes(passWord);
+            byte[] hashData = new MD5CryptoServiceProvider().ComputeHash(temp);
+
+            string hashPass = "";
+            foreach (byte item in hashData)
+            {
+                hashPass += item;
+            }
+
+
+            string query = "USP_Login @userName , @passWord";
+            DataTable result = DataProvider.Instance.ExecuteQuery(query, new object[] { userName, hashPass });
             return result.Rows.Count > 0;
         }
         public AccountDTO GetAccountByUserName(string userName)
