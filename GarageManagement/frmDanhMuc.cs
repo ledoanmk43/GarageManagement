@@ -151,6 +151,7 @@ namespace GarageManagement
         {
             txtIDPTT.DataBindings.Add(new Binding("Text", dgvPTT.DataSource, "idptt", true, DataSourceUpdateMode.Never));
             txtMaKH_PTT.DataBindings.Add(new Binding("Text", dgvPTT.DataSource, "idkhachhang", true, DataSourceUpdateMode.Never));
+            txtBienSo_PTT.DataBindings.Add(new Binding("Text", dgvPTT.DataSource, "carnumber", true, DataSourceUpdateMode.Never));
             dtpNgayTao_PTT.DataBindings.Add(new Binding("Value", dgvPTT.DataSource, "createddate", true, DataSourceUpdateMode.Never));
             txtSoTienThu.DataBindings.Add(new Binding("Text", dgvPTT.DataSource, "sotienthu", true, DataSourceUpdateMode.Never));
         }
