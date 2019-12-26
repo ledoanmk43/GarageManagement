@@ -48,7 +48,7 @@ namespace GarageManagement
             AddBindingXe();
             LoadListPSC();
             LoadListPTT();
-            LoadKH_PTT();
+            LoadXe_PTT();
             LoadXe_PSC();
             LoadKH_Xe();
             AddBindingPSC();
@@ -71,9 +71,9 @@ namespace GarageManagement
             kh_XeList.DataSource = KhachHangDAL.Instance.GetListKhachHang();
         }
 
-        void LoadKH_PTT()
+        void LoadXe_PTT()
         {
-            dgvKH_PTT.DataSource = KhachHangDAL.Instance.GetListKhachHang();
+            dgvXe_PTT.DataSource = XeDAL.Instance.GetListXe();
         }
 
         void LoadXe_PSC()
@@ -196,8 +196,7 @@ namespace GarageManagement
                     {
                         MessageBox.Show("Thêm Khách Hàng thành công");
                         LoadListKhachHang();
-                        LoadListXe();
-                        LoadKH_PTT();
+                        LoadListXe();               
                         LoadKH_Xe();
                     }
                     else
@@ -221,7 +220,6 @@ namespace GarageManagement
                         MessageBox.Show("Xóa Khách Hàng thành công");
                         LoadListKhachHang();
                         LoadListXe();
-                        LoadKH_PTT();
                         LoadKH_Xe();
                     }
                     else
@@ -251,7 +249,6 @@ namespace GarageManagement
                         MessageBox.Show("Sửa Khách Hàng thành công");
                         LoadListKhachHang();
                         LoadListXe();
-                        LoadKH_PTT();
                         LoadKH_Xe();
                     }
                     else
@@ -282,11 +279,13 @@ namespace GarageManagement
                     int maxe = Convert.ToInt32(txtMaXe.Text);
                     string hieuxe = txtHieuXe.Text;
                     int idkh = Convert.ToInt32(txtIDKH_XE.Text);
-                    if (XeDAL.Instance.InsertXe(maxe, hieuxe, idkh))
+                    string status = txtStatus.Text;
+                    if (XeDAL.Instance.InsertXe(maxe, hieuxe, idkh , status))
                     {
                         MessageBox.Show("Thêm xe thành công");
                         LoadListXe();
                         LoadXe_PSC();
+                        LoadXe_PTT();
                     }
                     else
                     {
@@ -309,6 +308,7 @@ namespace GarageManagement
                         MessageBox.Show("Xóa xe thành công");
                         LoadListXe();
                         LoadXe_PSC();
+                        LoadXe_PTT();
                     }
                     else
                     {
@@ -328,11 +328,13 @@ namespace GarageManagement
                     int maxe = Convert.ToInt32(txtMaXe.Text);
                     string hieuxe = txtHieuXe.Text;
                     int idkh = Convert.ToInt32(txtIDKH_XE.Text);
-                    if (XeDAL.Instance.UpdateXe(hieuxe, maxe, idkh))
+                    string status = txtStatus.Text;
+                    if (XeDAL.Instance.UpdateXe(hieuxe, maxe, idkh , status))
                     {
                         MessageBox.Show("Cập nhật xe thành công");
                         LoadListXe();
                         LoadXe_PSC();
+                        LoadXe_PTT();
                     }
                     else
                     {
@@ -654,14 +656,15 @@ namespace GarageManagement
         }
 
 
-        private void btnTimKH_PTT_Click(object sender, EventArgs e)
+        private void btnTimXe_PTT_Click(object sender, EventArgs e)
         { 
-            dgvKH_PTT.DataSource = KhachHangDAL.Instance.SearchKhachHangByNameAndID(txtKH_PTT.Text);
-            int currentRowindex = this.dgvKH_PTT.CurrentCellAddress.Y;
-            if (-1 < currentRowindex && currentRowindex < dgvKH_PTT.RowCount)
+            dgvXe_PTT.DataSource = XeDAL.Instance.SearchXe(txtXe_PTT.Text);
+            int currentRowindex = this.dgvXe_PTT.CurrentCellAddress.Y;
+            if (-1 < currentRowindex && currentRowindex < dgvXe_PTT.RowCount)
             {
-                KhachHangDTO obj = (KhachHangDTO)dgvKH_PTT.Rows[currentRowindex].DataBoundItem;
-                this.txtMaKH_PTT.Text = obj.Id.ToString();
+                XeDTO obj = (XeDTO)dgvXe_PSC.Rows[currentRowindex].DataBoundItem;
+                this.txtMaKH_PTT.Text = obj.IdKH.ToString();
+                this.txtBienSo_PTT.Text = obj.Carnumber.ToString();
             }
         }
 
@@ -681,6 +684,9 @@ namespace GarageManagement
 
         #endregion
 
+        private void tpXe_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }

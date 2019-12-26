@@ -88,6 +88,10 @@
             this.txtTimKho = new System.Windows.Forms.TextBox();
             this.dgvKho = new System.Windows.Forms.DataGridView();
             this.tpPhieuSuaChua = new System.Windows.Forms.TabPage();
+            this.dgvXe_PSC = new System.Windows.Forms.DataGridView();
+            this.btnTimXe_PSC = new System.Windows.Forms.Button();
+            this.txtXe_PSC = new System.Windows.Forms.TextBox();
+            this.label34 = new System.Windows.Forms.Label();
             this.btnXemPSC = new System.Windows.Forms.Button();
             this.btnSuaPSC = new System.Windows.Forms.Button();
             this.btnXoaPSC = new System.Windows.Forms.Button();
@@ -114,6 +118,10 @@
             this.label26 = new System.Windows.Forms.Label();
             this.dgvPSC = new System.Windows.Forms.DataGridView();
             this.tpPhieuThuTien = new System.Windows.Forms.TabPage();
+            this.dgvXe_PTT = new System.Windows.Forms.DataGridView();
+            this.btnTimKH_PTT = new System.Windows.Forms.Button();
+            this.txtXe_PTT = new System.Windows.Forms.TextBox();
+            this.label31 = new System.Windows.Forms.Label();
             this.btnXemPhieuThuTien = new System.Windows.Forms.Button();
             this.btnSuaPhieuThuTien = new System.Windows.Forms.Button();
             this.btnXoaPhieuThuTien = new System.Windows.Forms.Button();
@@ -133,14 +141,8 @@
             this.label39 = new System.Windows.Forms.Label();
             this.label40 = new System.Windows.Forms.Label();
             this.dgvPTT = new System.Windows.Forms.DataGridView();
-            this.dgvKH_PTT = new System.Windows.Forms.DataGridView();
-            this.btnTimKH_PTT = new System.Windows.Forms.Button();
-            this.txtKH_PTT = new System.Windows.Forms.TextBox();
-            this.label31 = new System.Windows.Forms.Label();
-            this.dgvXe_PSC = new System.Windows.Forms.DataGridView();
-            this.btnTimXe_PSC = new System.Windows.Forms.Button();
-            this.txtXe_PSC = new System.Windows.Forms.TextBox();
-            this.label34 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
+            this.txtStatus = new System.Windows.Forms.TextBox();
             this.tbKhachHang.SuspendLayout();
             this.tpKhachHang.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKhachHang)).BeginInit();
@@ -151,11 +153,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.nmSoLuongVatLieu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKho)).BeginInit();
             this.tpPhieuSuaChua.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvXe_PSC)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPSC)).BeginInit();
             this.tpPhieuThuTien.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvXe_PTT)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPTT)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvKH_PTT)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvXe_PSC)).BeginInit();
             this.SuspendLayout();
             // 
             // tbKhachHang
@@ -401,6 +403,8 @@
             // 
             // tpXe
             // 
+            this.tpXe.Controls.Add(this.label35);
+            this.tpXe.Controls.Add(this.txtStatus);
             this.tpXe.Controls.Add(this.dgvKH_Xe);
             this.tpXe.Controls.Add(this.btnTimKH_Xe);
             this.tpXe.Controls.Add(this.txtTimKH_Xe);
@@ -425,6 +429,7 @@
             this.tpXe.TabIndex = 0;
             this.tpXe.Text = "Xe";
             this.tpXe.UseVisualStyleBackColor = true;
+            this.tpXe.Click += new System.EventHandler(this.tpXe_Click);
             // 
             // dgvKH_Xe
             // 
@@ -474,7 +479,7 @@
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label16.Location = new System.Drawing.Point(659, 117);
+            this.label16.Location = new System.Drawing.Point(37, 118);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(89, 24);
             this.label16.TabIndex = 132;
@@ -494,17 +499,17 @@
             // txtHieuXe
             // 
             this.txtHieuXe.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtHieuXe.Location = new System.Drawing.Point(803, 116);
+            this.txtHieuXe.Location = new System.Drawing.Point(208, 117);
             this.txtHieuXe.Name = "txtHieuXe";
-            this.txtHieuXe.Size = new System.Drawing.Size(330, 27);
+            this.txtHieuXe.Size = new System.Drawing.Size(303, 27);
             this.txtHieuXe.TabIndex = 130;
             // 
             // txtMaXe
             // 
             this.txtMaXe.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaXe.Location = new System.Drawing.Point(803, 54);
+            this.txtMaXe.Location = new System.Drawing.Point(830, 54);
             this.txtMaXe.Name = "txtMaXe";
-            this.txtMaXe.Size = new System.Drawing.Size(330, 27);
+            this.txtMaXe.Size = new System.Drawing.Size(303, 27);
             this.txtMaXe.TabIndex = 129;
             // 
             // btnXemXe
@@ -593,7 +598,7 @@
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label19.Location = new System.Drawing.Point(37, 100);
+            this.label19.Location = new System.Drawing.Point(55, 98);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(0, 24);
             this.label19.TabIndex = 117;
@@ -878,6 +883,49 @@
             this.tpPhieuSuaChua.Text = "Phiếu Sửa Chữa";
             this.tpPhieuSuaChua.UseVisualStyleBackColor = true;
             // 
+            // dgvXe_PSC
+            // 
+            this.dgvXe_PSC.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvXe_PSC.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvXe_PSC.Location = new System.Drawing.Point(26, 368);
+            this.dgvXe_PSC.Name = "dgvXe_PSC";
+            this.dgvXe_PSC.RowHeadersWidth = 51;
+            this.dgvXe_PSC.RowTemplate.Height = 24;
+            this.dgvXe_PSC.Size = new System.Drawing.Size(490, 265);
+            this.dgvXe_PSC.TabIndex = 174;
+            // 
+            // btnTimXe_PSC
+            // 
+            this.btnTimXe_PSC.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnTimXe_PSC.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTimXe_PSC.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnTimXe_PSC.Location = new System.Drawing.Point(411, 311);
+            this.btnTimXe_PSC.Name = "btnTimXe_PSC";
+            this.btnTimXe_PSC.Size = new System.Drawing.Size(105, 51);
+            this.btnTimXe_PSC.TabIndex = 173;
+            this.btnTimXe_PSC.Text = "Tìm Xe";
+            this.btnTimXe_PSC.UseVisualStyleBackColor = false;
+            this.btnTimXe_PSC.Click += new System.EventHandler(this.btnTimXe_PSC_Click);
+            // 
+            // txtXe_PSC
+            // 
+            this.txtXe_PSC.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtXe_PSC.Location = new System.Drawing.Point(120, 321);
+            this.txtXe_PSC.Name = "txtXe_PSC";
+            this.txtXe_PSC.Size = new System.Drawing.Size(276, 27);
+            this.txtXe_PSC.TabIndex = 172;
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label34.ForeColor = System.Drawing.Color.DarkBlue;
+            this.label34.Location = new System.Drawing.Point(33, 322);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(81, 24);
+            this.label34.TabIndex = 171;
+            this.label34.Text = "Tìm xe:";
+            // 
             // btnXemPSC
             // 
             this.btnXemPSC.BackColor = System.Drawing.Color.SeaGreen;
@@ -935,7 +983,7 @@
             this.label30.AutoSize = true;
             this.label30.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label30.ForeColor = System.Drawing.Color.Red;
-            this.label30.Location = new System.Drawing.Point(624, 235);
+            this.label30.Location = new System.Drawing.Point(624, 231);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(130, 29);
             this.label30.TabIndex = 166;
@@ -944,7 +992,7 @@
             // txtTotalPricePSC
             // 
             this.txtTotalPricePSC.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotalPricePSC.Location = new System.Drawing.Point(821, 236);
+            this.txtTotalPricePSC.Location = new System.Drawing.Point(821, 232);
             this.txtTotalPricePSC.Name = "txtTotalPricePSC";
             this.txtTotalPricePSC.ReadOnly = true;
             this.txtTotalPricePSC.Size = new System.Drawing.Size(335, 30);
@@ -1139,9 +1187,9 @@
             // 
             // tpPhieuThuTien
             // 
-            this.tpPhieuThuTien.Controls.Add(this.dgvKH_PTT);
+            this.tpPhieuThuTien.Controls.Add(this.dgvXe_PTT);
             this.tpPhieuThuTien.Controls.Add(this.btnTimKH_PTT);
-            this.tpPhieuThuTien.Controls.Add(this.txtKH_PTT);
+            this.tpPhieuThuTien.Controls.Add(this.txtXe_PTT);
             this.tpPhieuThuTien.Controls.Add(this.label31);
             this.tpPhieuThuTien.Controls.Add(this.btnXemPhieuThuTien);
             this.tpPhieuThuTien.Controls.Add(this.btnSuaPhieuThuTien);
@@ -1169,6 +1217,49 @@
             this.tpPhieuThuTien.TabIndex = 4;
             this.tpPhieuThuTien.Text = "Phiếu Thu Tiền";
             this.tpPhieuThuTien.UseVisualStyleBackColor = true;
+            // 
+            // dgvXe_PTT
+            // 
+            this.dgvXe_PTT.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvXe_PTT.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvXe_PTT.Location = new System.Drawing.Point(27, 329);
+            this.dgvXe_PTT.Name = "dgvXe_PTT";
+            this.dgvXe_PTT.RowHeadersWidth = 51;
+            this.dgvXe_PTT.RowTemplate.Height = 24;
+            this.dgvXe_PTT.Size = new System.Drawing.Size(482, 301);
+            this.dgvXe_PTT.TabIndex = 211;
+            // 
+            // btnTimKH_PTT
+            // 
+            this.btnTimKH_PTT.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnTimKH_PTT.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTimKH_PTT.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnTimKH_PTT.Location = new System.Drawing.Point(411, 259);
+            this.btnTimKH_PTT.Name = "btnTimKH_PTT";
+            this.btnTimKH_PTT.Size = new System.Drawing.Size(98, 48);
+            this.btnTimKH_PTT.TabIndex = 210;
+            this.btnTimKH_PTT.Text = "Tìm Xe";
+            this.btnTimKH_PTT.UseVisualStyleBackColor = false;
+            this.btnTimKH_PTT.Click += new System.EventHandler(this.btnTimXe_PTT_Click);
+            // 
+            // txtXe_PTT
+            // 
+            this.txtXe_PTT.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtXe_PTT.Location = new System.Drawing.Point(130, 269);
+            this.txtXe_PTT.Name = "txtXe_PTT";
+            this.txtXe_PTT.Size = new System.Drawing.Size(262, 27);
+            this.txtXe_PTT.TabIndex = 209;
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label31.ForeColor = System.Drawing.Color.DarkBlue;
+            this.label31.Location = new System.Drawing.Point(23, 270);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(83, 24);
+            this.label31.TabIndex = 208;
+            this.label31.Text = "Tìm Xe:";
             // 
             // btnXemPhieuThuTien
             // 
@@ -1368,91 +1459,24 @@
             this.dgvPTT.Size = new System.Drawing.Size(633, 304);
             this.dgvPTT.TabIndex = 142;
             // 
-            // dgvKH_PTT
+            // label35
             // 
-            this.dgvKH_PTT.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvKH_PTT.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvKH_PTT.Location = new System.Drawing.Point(27, 329);
-            this.dgvKH_PTT.Name = "dgvKH_PTT";
-            this.dgvKH_PTT.RowHeadersWidth = 51;
-            this.dgvKH_PTT.RowTemplate.Height = 24;
-            this.dgvKH_PTT.Size = new System.Drawing.Size(482, 301);
-            this.dgvKH_PTT.TabIndex = 211;
+            this.label35.AutoSize = true;
+            this.label35.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label35.ForeColor = System.Drawing.Color.DarkBlue;
+            this.label35.Location = new System.Drawing.Point(659, 119);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(116, 24);
+            this.label35.TabIndex = 138;
+            this.label35.Text = "Tình trạng:";
             // 
-            // btnTimKH_PTT
+            // txtStatus
             // 
-            this.btnTimKH_PTT.BackColor = System.Drawing.Color.SeaGreen;
-            this.btnTimKH_PTT.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTimKH_PTT.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnTimKH_PTT.Location = new System.Drawing.Point(411, 259);
-            this.btnTimKH_PTT.Name = "btnTimKH_PTT";
-            this.btnTimKH_PTT.Size = new System.Drawing.Size(98, 48);
-            this.btnTimKH_PTT.TabIndex = 210;
-            this.btnTimKH_PTT.Text = "Tìm KH";
-            this.btnTimKH_PTT.UseVisualStyleBackColor = false;
-            this.btnTimKH_PTT.Click += new System.EventHandler(this.btnTimKH_PTT_Click);
-            // 
-            // txtKH_PTT
-            // 
-            this.txtKH_PTT.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtKH_PTT.Location = new System.Drawing.Point(210, 269);
-            this.txtKH_PTT.Name = "txtKH_PTT";
-            this.txtKH_PTT.Size = new System.Drawing.Size(182, 27);
-            this.txtKH_PTT.TabIndex = 209;
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label31.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label31.Location = new System.Drawing.Point(23, 270);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(169, 24);
-            this.label31.TabIndex = 208;
-            this.label31.Text = "Tìm khách hàng:";
-            // 
-            // dgvXe_PSC
-            // 
-            this.dgvXe_PSC.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvXe_PSC.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvXe_PSC.Location = new System.Drawing.Point(26, 368);
-            this.dgvXe_PSC.Name = "dgvXe_PSC";
-            this.dgvXe_PSC.RowHeadersWidth = 51;
-            this.dgvXe_PSC.RowTemplate.Height = 24;
-            this.dgvXe_PSC.Size = new System.Drawing.Size(490, 265);
-            this.dgvXe_PSC.TabIndex = 174;
-            // 
-            // btnTimXe_PSC
-            // 
-            this.btnTimXe_PSC.BackColor = System.Drawing.Color.SeaGreen;
-            this.btnTimXe_PSC.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTimXe_PSC.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnTimXe_PSC.Location = new System.Drawing.Point(411, 311);
-            this.btnTimXe_PSC.Name = "btnTimXe_PSC";
-            this.btnTimXe_PSC.Size = new System.Drawing.Size(105, 51);
-            this.btnTimXe_PSC.TabIndex = 173;
-            this.btnTimXe_PSC.Text = "Tìm Xe";
-            this.btnTimXe_PSC.UseVisualStyleBackColor = false;
-            this.btnTimXe_PSC.Click += new System.EventHandler(this.btnTimXe_PSC_Click);
-            // 
-            // txtXe_PSC
-            // 
-            this.txtXe_PSC.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtXe_PSC.Location = new System.Drawing.Point(120, 321);
-            this.txtXe_PSC.Name = "txtXe_PSC";
-            this.txtXe_PSC.Size = new System.Drawing.Size(276, 27);
-            this.txtXe_PSC.TabIndex = 172;
-            // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label34.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label34.Location = new System.Drawing.Point(33, 322);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(81, 24);
-            this.label34.TabIndex = 171;
-            this.label34.Text = "Tìm xe:";
+            this.txtStatus.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtStatus.Location = new System.Drawing.Point(830, 118);
+            this.txtStatus.Name = "txtStatus";
+            this.txtStatus.Size = new System.Drawing.Size(303, 27);
+            this.txtStatus.TabIndex = 137;
             // 
             // frmDanhMuc
             // 
@@ -1478,12 +1502,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvKho)).EndInit();
             this.tpPhieuSuaChua.ResumeLayout(false);
             this.tpPhieuSuaChua.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvXe_PSC)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPSC)).EndInit();
             this.tpPhieuThuTien.ResumeLayout(false);
             this.tpPhieuThuTien.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvXe_PTT)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPTT)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvKH_PTT)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvXe_PSC)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1599,9 +1623,11 @@
         private System.Windows.Forms.Button btnTimXe_PSC;
         private System.Windows.Forms.TextBox txtXe_PSC;
         private System.Windows.Forms.Label label34;
-        private System.Windows.Forms.DataGridView dgvKH_PTT;
+        private System.Windows.Forms.DataGridView dgvXe_PTT;
         private System.Windows.Forms.Button btnTimKH_PTT;
-        private System.Windows.Forms.TextBox txtKH_PTT;
+        private System.Windows.Forms.TextBox txtXe_PTT;
         private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.TextBox txtStatus;
     }
 }

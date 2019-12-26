@@ -53,9 +53,9 @@ namespace GarageManagement.GarageManagement_DAL
         }
 
 
-        public bool InsertXe(int carnumber, string carbrand, int idKH)
+        public bool InsertXe(int carnumber, string carbrand, int idKH , string status)
         {
-            string query = string.Format("insert dbo.xe (carnumber , carbrand , idkh) values ({0} , N'{1}', {2})", carnumber, carbrand,idKH);
+            string query = string.Format("insert dbo.xe (carnumber , carbrand , idkh , status) values ({0} , N'{1}', {2} , N'{3}')", carnumber, carbrand,idKH , status);
             int result = DataProvider.Instance.ExecuteNonQuery(query);
             return result > 0;
         }
@@ -67,9 +67,9 @@ namespace GarageManagement.GarageManagement_DAL
             return result > 0;
         }
 
-        public bool UpdateXe( string carbrand , int carnumber , int idkh)
+        public bool UpdateXe( string carbrand , int carnumber , int idkh , string status)
         {
-            string query = string.Format("update dbo.xe set carbrand = N'{0}' , idkh = {1} where carnumber = {2}", carbrand ,idkh ,carnumber );
+            string query = string.Format("update dbo.xe set carbrand = N'{0}' , idkh = {1} , status = N'{2}' where carnumber = {3}", carbrand ,idkh , status, carnumber);
             int result = DataProvider.Instance.ExecuteNonQuery(query);
             return result > 0;
         }
