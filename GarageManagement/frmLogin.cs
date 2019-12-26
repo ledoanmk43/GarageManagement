@@ -43,9 +43,9 @@ namespace GarageManagement
                     adminFrom.ShowDialog();
                     this.Show();
                 }
-                catch(Exception)
+                catch(Exception ex)
                 {
-                    MessageBox.Show("Đã có lỗi xảy ra!");
+                    MessageBox.Show("Đã có lỗi xảy ra!" + ex.Message);
                 }
             }
             else

@@ -73,5 +73,21 @@ namespace GarageManagement.GarageManagement_DAL
             int result = DataProvider.Instance.ExecuteNonQuery(query);
             return result > 0;
         }
+
+        public List<XeDTO> SearchXe (string text)
+        {
+            List<XeDTO> xeList = new List<XeDTO>();
+            string query = string.Format("select * from dbo.xe where dbo.GetUnsignString(carbrand) like N'%' + dbo.GetUnsignString(N'{0}') + '%'", text);
+            query += string.Format(" or carnumber like N'%' + N'{0}' + '%'", text);
+
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            foreach (DataRow item in data.Rows)
+            {
+                XeDTO xe = new XeDTO(item);
+                xeList.Add(xe);
+            }
+
+            return xeList;
+        }
     }
 }

@@ -61,9 +61,9 @@ namespace GarageManagement.GarageManagement_DAL
             return kho;
         }
 
-        public bool InsertVatLieu( int iditem, string item , int slitem , DateTime? importeddate , DateTime? exporteddate)
+        public bool InsertVatLieu( int iditem, string item , int slitem , DateTime? importeddate )
         {
-            string query = string.Format("insert dbo.vatlieu ( iditem , item , slitem ,importeddate , exporteddate ) values ({0} , N'{1}' , {2} , '{3}' , '{4}')",  iditem, item, slitem , importeddate, exporteddate);
+            string query = string.Format("insert dbo.vatlieu ( iditem , item , slitem ,importeddate  ) values ({0} , N'{1}' , {2} , '{3}' )",  iditem, item, slitem , importeddate);
             int result = DataProvider.Instance.ExecuteNonQuery(query);
             return result > 0;
         }
@@ -75,9 +75,9 @@ namespace GarageManagement.GarageManagement_DAL
             return result > 0;
         }
 
-        public bool UpdateVatLieu( int iditem, string item, int slitem, DateTime? importeddate, DateTime? exporteddate)
+        public bool UpdateVatLieu( int iditem, string item, int slitem, DateTime? importeddate)
         {
-            string query = string.Format("update dbo.vatlieu set item = N'{0}' , slitem = {1} , importeddate = N'{2}', exporteddate = N'{3}'  where iditem = {4}",  item, slitem, importeddate, exporteddate, iditem);
+            string query = string.Format("update dbo.vatlieu set item = N'{0}' , slitem = {1} , importeddate = N'{2}' where iditem = {3}",  item, slitem, importeddate, iditem);
             int result = DataProvider.Instance.ExecuteNonQuery(query);
             return result > 0;
         }
