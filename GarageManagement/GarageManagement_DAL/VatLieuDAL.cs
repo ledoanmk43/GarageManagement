@@ -61,9 +61,9 @@ namespace GarageManagement.GarageManagement_DAL
             return kho;
         }
 
-        public bool InsertVatLieu( int iditem, string item , int slitem , DateTime? importeddate )
+        public bool InsertVatLieu( string item , int slitem , DateTime? importeddate , float dongia)
         {
-            string query = string.Format("insert dbo.vatlieu ( iditem , item , slitem ,importeddate  ) values ({0} , N'{1}' , {2} , '{3}' )",  iditem, item, slitem , importeddate);
+            string query = string.Format("insert dbo.vatlieu ( item , slitem ,importeddate, dongia  ) values ( N'{0}' , {1} , '{2}' , {3} )",  item, slitem , importeddate,dongia);
             int result = DataProvider.Instance.ExecuteNonQuery(query);
             return result > 0;
         }
@@ -75,9 +75,9 @@ namespace GarageManagement.GarageManagement_DAL
             return result > 0;
         }
 
-        public bool UpdateVatLieu( int iditem, string item, int slitem, DateTime? importeddate)
+        public bool UpdateVatLieu( int iditem, string item, int slitem, DateTime? importeddate, float dongia)
         {
-            string query = string.Format("update dbo.vatlieu set item = N'{0}' , slitem = {1} , importeddate = N'{2}' where iditem = {3}",  item, slitem, importeddate, iditem);
+            string query = string.Format("update dbo.vatlieu set item = N'{0}' , slitem = {1} , importeddate = N'{2}' , dongia = {3} where iditem = {4}",  item, slitem, importeddate,dongia, iditem);
             int result = DataProvider.Instance.ExecuteNonQuery(query);
             return result > 0;
         }
@@ -96,6 +96,24 @@ namespace GarageManagement.GarageManagement_DAL
             }
 
             return khoList;
+        }
+        public DataTable CreateBCTK(DateTime? createdDate)
+        {
+            List<VatLieuDTO> phieuthutienList = new List<VatLieuDTO>();
+            string query = string.Format("exec USP_GetTonKhoByMonth @createdDate ");
+            return DataProvider.Instance.ExecuteQuery(query, new object[] { createdDate });
+
+        }
+        public List<VatLieuDTO> GetTonKhoByMonth(DateTime? createdDate)  
+        {
+            List<VatLieuDTO> phieuthutienList = new List<VatLieuDTO>();
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT IDITEM, ITEM, DONGIA, SLITEM, IMPORTEDDATE FROM VATLIEU WHERE MONTH(IMPORTEDDATE) = MONTH('" + createdDate + "')  AND YEAR(IMPORTEDDATE) = YEAR('" + createdDate + "')");
+            foreach (DataRow item in data.Rows)
+            {
+                VatLieuDTO phieuthutien = new VatLieuDTO(item);
+                phieuthutienList.Add(phieuthutien);
+            }
+            return phieuthutienList;
         }
     }
 }

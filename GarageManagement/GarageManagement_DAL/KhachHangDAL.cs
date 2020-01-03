@@ -37,10 +37,10 @@ namespace GarageManagement_DAL
             return khachhangList;
         }
 
-        public bool InsertKhachHang(int id  ,string customername, string address , int phone , DateTime? createdate , float debt)
+        public bool InsertKhachHang(string customername, string address , int phone , DateTime? createdate , float debt)
         {
-            string query = "insert dbo.hosokhachhang (id , customername , address , phone , createddate , debt )";
-            query += string.Format(" values ( {0} , N'{1}' , N'{2}' , {3} , N'{4}' , {5} )", id , customername, address, phone, createdate, debt );
+            string query = "insert dbo.hosokhachhang ( customername , address , phone , createddate , debt )";
+            query += string.Format(" values (  N'{0}' , N'{1}' , {2} , N'{3}' , {4} )",  customername, address, phone, createdate, debt );
             int result = DataProvider.Instance.ExecuteNonQuery(query);
             return result > 0;
         }

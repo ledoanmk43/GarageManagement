@@ -38,10 +38,10 @@ namespace GarageManagement.GarageManagement_DAL
             return phieusuachuaList;
         }
 
-        public bool InsertPhieuSuaChua(int idpsc, int carnumber, int iditem, string detail, DateTime? createddate, float dongia, float tiencong, float totalprice)
+        public bool InsertPhieuSuaChua( int carnumber, int iditem, string detail, DateTime? createddate, float dongia, float tiencong, float totalprice)
         {
-            string query = string.Format("insert dbo.phieusuachua ( idpsc , carnumber , iditem , detail , createddate , dongia , tiencong , totalprice ) ");
-            query += string.Format("values ({0} , {1} , {2} , N'{3}' , '{4}' , {5}, {6}, {7}) ", idpsc, carnumber, iditem, detail, createddate, dongia, tiencong, totalprice);
+            string query = string.Format("insert dbo.phieusuachua ( carnumber , iditem , detail , createddate , dongia , tiencong , totalprice ) ");
+            query += string.Format("values ( {0} , {1} , N'{2}' , '{3}' , {4}, {5}, {6}) ", carnumber, iditem, detail, createddate, dongia, tiencong, totalprice);
             int result = DataProvider.Instance.ExecuteNonQuery(query);
             return result > 0;
         }

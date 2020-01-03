@@ -13,16 +13,17 @@ namespace GarageManagement.GarageManagement_DTO
         private string item;
         private int slitem;
         private DateTime? importeddate;
+        private float dongia;
 
 
-        public VatLieuDTO( int iditem , string item , int slitem , DateTime? iporteddate )
+        public VatLieuDTO( int iditem , string item , int slitem , DateTime? iporteddate , float dongia)
         {
 
             this.Iditem = iditem;
             this.Item = item;
             this.Slitem = slitem;
             this.Importeddate = iporteddate;
-
+            this.Dongia = dongia;
         }
 
         public VatLieuDTO(DataRow row)
@@ -31,6 +32,7 @@ namespace GarageManagement.GarageManagement_DTO
             this.Item = row["item"].ToString();
             this.Slitem = (int)row["slitem"];
             this.Importeddate = (DateTime?)row["importeddate"];
+            this.Dongia = (float)Convert.ToDouble(row["dongia"].ToString());
         }
 
 
@@ -38,6 +40,6 @@ namespace GarageManagement.GarageManagement_DTO
         public string Item { get => item; set => item = value; }
         public int Slitem { get => slitem; set => slitem = value; }
         public DateTime? Importeddate { get => importeddate; set => importeddate = value; }
-
+        public float Dongia { get => dongia; set => dongia = value; }
     }
 }

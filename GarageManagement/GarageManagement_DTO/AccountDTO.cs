@@ -9,26 +9,21 @@ namespace GarageManagement_DTO
 {
     public class AccountDTO
     {
-        public AccountDTO(string id, string userName, int accesslevel, string password)
+        private string displayname;
+        public AccountDTO( string userName, int accesslevel, string password , string displayname)
         {
-            this.ID = id;
+            
             this.UserName = userName;
             this.Password = password;
             this.AccessLevel = accesslevel;
+            this.Displayname = displayname;
         }
         public AccountDTO(DataRow row)
-        {
-            this.ID = row["id"].ToString();
+        {       
             this.UserName = row["userName"].ToString();
+            this.Displayname = row["displayname"].ToString();
             this.Password = row["password"].ToString();
             this.AccessLevel = (int)row["accesslevel"];
-        }
-
-        private string id;  
-        public string ID
-        {
-            get { return id; }
-            set { id = value; }
         }
 
 
@@ -55,5 +50,6 @@ namespace GarageManagement_DTO
             set { access_level = value; }
         }
 
+        public string Displayname { get => displayname; set => displayname = value; }
     }
 }
