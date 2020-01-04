@@ -21,8 +21,7 @@ namespace GarageManagement.GarageManagement_GUI
     public partial class frmPTT : DevExpress.XtraEditors.XtraForm
     {
         BindingSource pttList = new BindingSource();
-        List<KhachHangDAL> listKH;
-        List<PhieuThuTienDAL> listPTT;
+   
         public frmPTT()
         {
             InitializeComponent();

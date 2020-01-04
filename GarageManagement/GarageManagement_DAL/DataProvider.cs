@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using System.Net;
 
 namespace GarageManagement_DAL
 {
@@ -19,7 +20,7 @@ namespace GarageManagement_DAL
         }
 
         private DataProvider() { }
-        private string ConnectionString = @"Data Source=LAPTOP-UGOQ4HS6; Initial Catalog=GARAGEMANAGEMENT;Integrated Security=True";
+        private string ConnectionString = @"Data Source=" + Dns.GetHostName() + ";Initial Catalog=GARAGEMANAGEMENT;Integrated Security=True";
 
         public DataTable ExecuteQuery(string query, object[] parameter = null)
         {
